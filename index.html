@@ -708,7 +708,7 @@ if ('serviceWorker' in navigator) {
 
                 &lt;h2 id=&quot;contact&quot;&gt;Contact Us&lt;/h2&gt;
                 &lt;p&gt;Don’t let a broken Miele Vacuum disrupt your day! Call us now or book your repair online.&lt;/p&gt;
-                &lt;a href=&quot;#contact-form&quot; class=&quot;btn&quot;&gt;Schedule Your Repair&lt;/a&gt;
+                &lt;button id=&quot;phoneRevealBtn2&quot; class=&quot;btn&quot; style=&quot;cursor:pointer;&quot;&gt;Call Toll-Free&lt;/button&gt;
             &lt;/div&gt;
         &lt;/section&gt;
     &lt;/div&gt;
@@ -740,6 +740,28 @@ if ('serviceWorker' in navigator) {
                 window.scrollBy(0, -80);
             }
         }
+
+        document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+            var phoneBtn2 = document.getElementById(&#x27;phoneRevealBtn2&#x27;);
+            var revealed2 = false;
+            if (phoneBtn2) {
+                phoneBtn2.addEventListener(&#x27;click&#x27;, function(e) {
+                    e.preventDefault();
+                    if (!revealed2) {
+                        revealed2 = true;
+                        var p = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                        var num = &#x27;1&#x27; + p.join(&#x27;&#x27;);
+                        var display = &#x27;1-800-988-5561&#x27;;
+                        phoneBtn2.innerHTML = display;
+                        phoneBtn2.onclick = function() { window.location.href = &#x27;tel:&#x27; + num; };
+                    } else {
+                        var p = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                        var num = &#x27;1&#x27; + p.join(&#x27;&#x27;);
+                        window.location.href = &#x27;tel:&#x27; + num;
+                    }
+                });
+            }
+        });
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;&lt;/body&gt;" style="width:100%;display:block;height:auto;overflow:visible;transition:height 1.5s ease;-webkit-transition:height 1.5s ease;-moz-transition:height .25s ease"></iframe></div></div></div></div></section>  </div></div></div><div id="b13d997e-6d5d-4e29-bc02-09b0819c3ad3" class="widget widget-html widget-html-html-1"><div data-ux="Widget" role="region" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> <section data-ux="Section" data-aid="HTML_SECTION_RENDERED" class="x-el x-el-section c1-1 c1-2 c1-3 c1-h c1-i c1-b c1-c c1-k c1-l c1-d c1-e c1-f c1-g"><div data-ux="Container" class="x-el x-el-div c1-1 c1-2 c1-1b c1-1c c1-12 c1-13 c1-1a c1-b c1-c c1-22 c1-d c1-23 c1-e c1-24 c1-f c1-25 c1-g"><div data-ux="Grid" class="x-el x-el-div c1-1 c1-2 c1-o c1-1j c1-1k c1-1l c1-1d c1-5e c1-1e c1-5f c1-b c1-c c1-5g c1-5h c1-5i c1-5j c1-d c1-e c1-f c1-g"><div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-1j c1-v c1-1s c1-5k c1-1a c1-1o c1-5l c1-1v c1-5m c1-b c1-c c1-5n c1-5o c1-5p c1-5q c1-d c1-5r c1-5s c1-e c1-f c1-g"><div data-ux="Element" id="bs-2" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><iframe id="iframe-281532" frameBorder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-top-navigation" src="javascript: window.frameElement.getAttribute(&quot;srcdoc&quot;);" srcDoc="&lt;script&gt;window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};&lt;/script&gt;&lt;body style=&#x27;margin: 0&#x27;&gt;&lt;html lang=&quot;en&quot;&gt;
