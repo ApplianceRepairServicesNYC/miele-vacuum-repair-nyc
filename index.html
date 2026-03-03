@@ -18,6 +18,7 @@
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="https://mielevacuumrepairnyc.com/favicon.png" sizes="180x180">
     <link rel="apple-touch-icon" href="https://mielevacuumrepairnyc.com/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -365,6 +366,137 @@
             background: var(--gray);
             color: var(--red);
         }
+        /* Trust Badges */
+        .trust-section {
+            padding: 40px 0;
+            background: #f5f5f5;
+        }
+        .trust-badges-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 5px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .trust-badges-container::-webkit-scrollbar {
+            display: none;
+        }
+        .trust-badge {
+            flex: 0 0 160px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+        .trust-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .trust-badge .icon {
+            font-size: 32px;
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+        .trust-badge .title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .trust-badge .description {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .trust-badge .toggle-button {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .trust-badge .toggle-button:hover {
+            background: #6a1029;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 2000;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal.active {
+            display: block;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        .modal-close:hover {
+            color: var(--red);
+        }
+        .modal-title {
+            color: var(--red);
+            margin: 0 0 15px;
+            font-size: 1.2rem;
+        }
+        .modal-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+        }
+        .modal-overlay.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .trust-badge {
+                flex: 0 0 140px;
+                min-height: 200px;
+                padding: 15px 10px;
+            }
+            .trust-badge .icon {
+                font-size: 26px;
+            }
+            .trust-badge .title {
+                font-size: 12px;
+            }
+            .trust-badge .description {
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -408,6 +540,82 @@
             </div>
         </div>
     </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-badges-container">
+                <div class="trust-badge">
+                    <i class="fas fa-money-bill-alt icon"></i>
+                    <div class="title">Money-Back Guarantee</div>
+                    <div class="description">Full refund if we can't repair your vacuum.</div>
+                    <button class="toggle-button" data-details="We understand the frustration of dealing with companies that charge for repairs they can't complete. At Miele Vacuum Repair NYC, we believe in honest, reliable service you can trust. That's why we offer a 100% Money-Back Guarantee. If we are unable to complete your vacuum repair due to our own limitations, you will receive a full refund—no questions asked.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-tools icon"></i>
+                    <div class="title">30+ Years Experience</div>
+                    <div class="description">Expert vacuum repair since 1993.</div>
+                    <button class="toggle-button" data-details="With over three decades of experience since 1993, our team has mastered the art of Miele vacuum repair. We've tackled every challenge, from vintage models to the latest cordless vacuums, ensuring your home runs smoothly. Our seasoned technicians bring unmatched expertise, delivering reliable solutions you can count on.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-clock icon"></i>
+                    <div class="title">Same-Day Service</div>
+                    <div class="description">Fast repairs in hours, not days.</div>
+                    <button class="toggle-button" data-details="We know a broken vacuum disrupts your cleaning routine, so we prioritize speed without sacrificing quality. Our same-day service ensures technicians arrive promptly, equipped to diagnose and fix your Miele vacuum in hours. With efficient scheduling and a commitment to urgency, we minimize downtime.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-check-circle icon"></i>
+                    <div class="title">80% Same-Day Repairs</div>
+                    <div class="description">Most repairs done the day you call.</div>
+                    <button class="toggle-button" data-details="Our efficiency sets us apart—80% of our repairs are completed the same day you reach out. We stock common Miele parts and equip our technicians with advanced tools to resolve issues on the spot. This commitment to quick, effective service means less waiting and more time with your fully functional vacuum.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt icon"></i>
+                    <div class="title">Warranty on All Repairs</div>
+                    <div class="description">All repairs backed by our warranty.</div>
+                    <button class="toggle-button" data-details="Every repair we perform comes with a comprehensive warranty, ensuring your peace of mind. If an issue arises from our work, we'll return to fix it at no extra cost. Our warranty reflects our confidence in our craftsmanship and our dedication to delivering lasting solutions for your Miele vacuum.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-user-check icon"></i>
+                    <div class="title">Background Checked Techs</div>
+                    <div class="description">Screened for your safety.</div>
+                    <button class="toggle-button" data-details="Your safety is our priority, which is why all our technicians undergo thorough background checks. We hire only trustworthy professionals who are not only skilled but also respectful of your home. With our team, you can feel confident inviting us in.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-calendar-alt icon"></i>
+                    <div class="title">Weekend Service</div>
+                    <div class="description">Repairs available on weekends.</div>
+                    <button class="toggle-button" data-details="Life doesn't pause on weekends, and neither do we. Our weekend service ensures you can schedule repairs at your convenience, without disrupting your workweek. Our technicians are available to address your vacuum issues promptly, any day of the week.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-cogs icon"></i>
+                    <div class="title">Genuine Miele Parts</div>
+                    <div class="description">Factory parts, no substitutes.</div>
+                    <button class="toggle-button" data-details="We use only genuine Miele parts sourced directly from the manufacturer, ensuring optimal performance and longevity. Our transparent pricing means you get high-quality components without inflated costs, maintaining the integrity of your vacuum repairs.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-truck icon"></i>
+                    <div class="title">Free Pickup & Delivery</div>
+                    <div class="description">We come to you, no extra charge.</div>
+                    <button class="toggle-button" data-details="We offer complimentary pickup and delivery throughout all five NYC boroughs. Our team will collect your vacuum, repair it at our facility, and return it to you—all at no additional cost. Convenience is part of our service.">Learn More</button>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-umbrella icon"></i>
+                    <div class="title">Fully Insured</div>
+                    <div class="description">Coverage for your peace of mind.</div>
+                    <button class="toggle-button" data-details="We are fully insured, providing you with peace of mind during every repair. Our comprehensive insurance coverage ensures that any unexpected incidents are handled responsibly. For NYC residences, we can provide a certificate of insurance to meet building requirements.">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for trust badges -->
+    <div class="modal" id="trustModal">
+        <button class="modal-close">&times;</button>
+        <h3 class="modal-title">Details</h3>
+        <div class="modal-content"></div>
+    </div>
+    <div class="modal-overlay"></div>
 
     <section class="alt" id="services">
         <div class="container">
@@ -655,6 +863,36 @@
                         menu.classList.remove('show');
                     });
                 }
+            });
+
+            // Trust badge modal functionality
+            var modal = document.getElementById('trustModal');
+            var modalTitle = modal.querySelector('.modal-title');
+            var modalContent = modal.querySelector('.modal-content');
+            var modalClose = modal.querySelector('.modal-close');
+            var modalOverlay = document.querySelector('.modal-overlay');
+
+            document.querySelectorAll('.trust-badge .toggle-button').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var badge = btn.closest('.trust-badge');
+                    var title = badge.querySelector('.title').textContent;
+                    var details = btn.getAttribute('data-details');
+
+                    modalTitle.textContent = title;
+                    modalContent.textContent = details;
+                    modal.classList.add('active');
+                    modalOverlay.classList.add('active');
+                });
+            });
+
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                modalOverlay.classList.remove('active');
+            });
+
+            modalOverlay.addEventListener('click', function() {
+                modal.classList.remove('active');
+                modalOverlay.classList.remove('active');
             });
         });
     </script>
