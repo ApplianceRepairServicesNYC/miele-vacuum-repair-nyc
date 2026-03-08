@@ -161,6 +161,15 @@
             overflow-y: auto;
             list-style: none;
         }
+        @media (max-width: 768px) {
+            .services-dropdown {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 300px;
+            }
+        }
         .services-menu.active .services-dropdown {
             display: block;
         }
