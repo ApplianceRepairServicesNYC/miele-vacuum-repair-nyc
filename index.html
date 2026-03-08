@@ -467,26 +467,188 @@
             margin: 0;
         }
         .contact-section {
-            background: linear-gradient(135deg, var(--red) 0%, #5a0f25 100%);
-            color: white;
+            background: var(--gray);
+            padding: 60px 0;
+        }
+        #cf-schedule-container {
+            background: transparent;
+            border: 2px solid #808080;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+        .cf-schedule-text {
+            font-size: 1.5rem;
+            color: #2A2A2A;
+            font-weight: 600;
             text-align: center;
+            margin-bottom: 15px;
         }
-        .contact-section h2 {
-            color: white;
-        }
-        .contact-info {
+        .cf-book-button {
             display: flex;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, var(--red), #5a0f25);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 100%;
+            max-width: 220px;
+            height: 60px;
+            align-items: center;
             justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            transition: all .3s;
+            box-sizing: border-box;
         }
-        .contact-item {
+        .cf-book-button:hover {
+            background: linear-gradient(45deg, #5a0f25, #3d0a19);
+            transform: translateY(-3px);
+        }
+        .form-call-now {
+            display: flex;
+            padding: 12px 28px;
+            background: #333;
+            color: white;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 15px auto 0;
+            width: 100%;
+            max-width: 220px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            box-sizing: border-box;
+            border: none;
+        }
+        .form-call-now:hover {
+            background: #444;
+            transform: translateY(-3px);
+        }
+        .cf-contact-form-section {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .6s ease;
+            padding: 0;
+            background: linear-gradient(135deg, var(--red) 0%, #5a0f25 100%);
+            border-radius: 12px;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+        .cf-contact-form-section.active {
+            max-height: 1600px;
+            opacity: 1;
+            padding: 20px;
+        }
+        .expect-text {
+            font-size: .95rem;
+            color: #fff;
             text-align: center;
+            margin-bottom: 15px;
         }
-        .contact-item h4 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+        .cf-contact-form {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-sizing: border-box;
+        }
+        .cf-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .cf-form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        .cf-form-group input,
+        .cf-form-group select,
+        .cf-form-group textarea {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .cf-form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .cf-form-button {
+            background: linear-gradient(45deg, var(--red), #5a0f25);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 220px;
+            height: 60px;
+            margin: 20px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            box-sizing: border-box;
+        }
+        .cf-form-button:hover {
+            background: linear-gradient(45deg, #5a0f25, #3d0a19);
+            transform: translateY(-3px);
+        }
+        .cf-success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .cf-success-modal.active {
+            display: flex;
+        }
+        .cf-success-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .cf-success-content p {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--red);
+            margin: 0 0 25px;
+            line-height: 1.6;
+        }
+        .cf-close-modal {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .cf-close-modal:hover {
+            background: #5a0f25;
         }
         .footer-main {
             background: #1a1a1a;
@@ -911,7 +1073,7 @@
                     <h1>Expert Miele Vacuum Repair in NYC</h1>
                     <p>Factory-certified technicians serving Manhattan, Brooklyn, Queens, Bronx & Staten Island.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <button class="btn" id="phoneRevealBtn2">Call Toll-Free</button>
+                        <button class="btn" id="phoneRevealBtn2">Schedule Online</button>
                         <button class="btn btn-secondary modal-trigger" data-modal="reviewsModal">★ Read Reviews</button>
                     </div>
                 </div>
@@ -1311,25 +1473,49 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2>Schedule Your Miele Vacuum Repair</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px;">Contact us today for fast, professional Miele vacuum repair service in New York City. Free estimates and pickup available.</p>
-            <button class="btn" id="phoneRevealBtn3">Call Toll-Free</button>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>Hours</h4>
-                    <p>Mon-Sun: 7AM - 8PM</p>
+            <section id="cf-schedule-container">
+                <div class="cf-schedule-text">Schedule Your Miele Vacuum Repair</div>
+                <button class="cf-book-button" id="cfBookButton">Book Online</button>
+                <button class="form-call-now" id="formCallNow">Call Toll-Free</button>
+                <div class="cf-contact-form-section" id="cfContactFormSection">
+                    <p class="expect-text">What to Expect: Once you submit your request, a technician will contact you within 30 minutes.</p>
+                    <form id="cfContactForm" class="cf-contact-form" action="https://formsubmit.co/insuranceappliance@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Miele Vacuum Repair Request - NYC">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" id="formNextUrl">
+                        <div class="cf-form-group"><label for="cfName">Name *</label><input type="text" id="cfName" name="name" placeholder="John Doe" required></div>
+                        <div class="cf-form-group"><label for="cfEmail">Email *</label><input type="email" id="cfEmail" name="email" placeholder="john@example.com" required></div>
+                        <div class="cf-form-group"><label for="cfSubject">Vacuum Type *</label>
+                            <select id="cfSubject" name="vacuum_type" required>
+                                <option value="" disabled selected>Select Vacuum Type...</option>
+                                <option value="Miele Complete C3">Miele Complete C3</option>
+                                <option value="Miele Classic C1">Miele Classic C1</option>
+                                <option value="Miele Compact C2">Miele Compact C2</option>
+                                <option value="Miele Triflex HX1">Miele Triflex HX1</option>
+                                <option value="Miele Blizzard CX1">Miele Blizzard CX1</option>
+                                <option value="Miele Scout RX3">Miele Scout RX3</option>
+                                <option value="Miele Dynamic U1">Miele Dynamic U1</option>
+                                <option value="Miele Boost CX1">Miele Boost CX1</option>
+                                <option value="Miele Cat & Dog">Miele Cat & Dog</option>
+                                <option value="Other Miele Vacuum">Other</option>
+                            </select>
+                        </div>
+                        <div class="cf-form-group"><label for="cfPhone">Phone *</label><input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}"></div>
+                        <div class="cf-form-group"><label for="cfAddress">Address *</label><textarea id="cfAddress" name="address" placeholder="123 Main St, New York, NY 10001" required></textarea></div>
+                        <div class="cf-form-group"><label for="cfMessage">Describe the Problem *</label><textarea id="cfMessage" name="message" placeholder="Please describe the issue with your Miele vacuum..." required></textarea></div>
+                        <button type="submit" class="cf-form-button">Send Request</button>
+                    </form>
                 </div>
-                <div class="contact-item">
-                    <h4>Service Area</h4>
-                    <p>All Five NYC Boroughs</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Response Time</h4>
-                    <p>Same-Day Available</p>
-                </div>
-            </div>
+            </section>
         </div>
     </section>
+    <div class="cf-success-modal" id="cfSuccessModal">
+        <div class="cf-success-content">
+            <p id="successMessage">Your request has been sent.<br>A Miele technician will contact you within 30 minutes!</p>
+            <button class="cf-close-modal" id="cfCloseModal">Close</button>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-main">
@@ -1765,6 +1951,75 @@
                         this.innerHTML = display;
                         this.onclick = function() { window.location.href = 'tel:' + num; };
                     }
+                });
+            }
+
+            // Contact form toggle
+            var cfBookButton = document.getElementById('cfBookButton');
+            if (cfBookButton) {
+                cfBookButton.addEventListener('click', function() {
+                    document.getElementById('cfContactFormSection').classList.toggle('active');
+                });
+            }
+
+            // Form call now button
+            var formCallNow = document.getElementById('formCallNow');
+            if (formCallNow) {
+                var formCallRevealed = false;
+                formCallNow.addEventListener('click', function() {
+                    if (!formCallRevealed) {
+                        formCallRevealed = true;
+                        var p = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                        var num = '1' + p.join('');
+                        var display = '1-800-988-5561';
+                        this.innerHTML = display;
+                        this.onclick = function() { window.location.href = 'tel:' + num; };
+                    }
+                });
+            }
+
+            // Schedule Online hero button - scroll and open form
+            var scheduleOnlineBtn = document.getElementById('phoneRevealBtn2');
+            if (scheduleOnlineBtn) {
+                scheduleOnlineBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var formContainer = document.getElementById('cf-schedule-container');
+                    var formSection = document.getElementById('cfContactFormSection');
+                    if (formContainer) {
+                        formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setTimeout(function() {
+                            if (formSection && !formSection.classList.contains('active')) {
+                                formSection.classList.add('active');
+                            }
+                        }, 500);
+                    }
+                });
+            }
+
+            // Contact form submission
+            var cfContactForm = document.getElementById('cfContactForm');
+            if (cfContactForm) {
+                document.getElementById('formNextUrl').value = window.location.href;
+                cfContactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var formData = new FormData(cfContactForm);
+                    fetch(cfContactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function() {
+                        document.getElementById('cfSuccessModal').classList.add('active');
+                        cfContactForm.reset();
+                        document.getElementById('cfContactFormSection').classList.remove('active');
+                    });
+                });
+            }
+
+            // Close success modal
+            var cfCloseModal = document.getElementById('cfCloseModal');
+            if (cfCloseModal) {
+                cfCloseModal.addEventListener('click', function() {
+                    document.getElementById('cfSuccessModal').classList.remove('active');
                 });
             }
         });
