@@ -110,22 +110,26 @@
             height: 40px;
             width: auto;
         }
-        nav {
+        .nav-right {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
-            flex-wrap: wrap;
         }
-        nav a {
+        .services-menu {
+            position: relative;
+        }
+        .services-btn {
             color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
         }
-        nav a:hover { opacity: 0.8; }
-        .nav-link {
-            display: block;
-            padding: 5px 0;
+        .services-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .nav-cta-btn {
             background: white;
@@ -141,6 +145,98 @@
         .nav-cta-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .services-dropdown {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 280px;
+            background: var(--red);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            padding: 25px 0;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
+            list-style: none;
+        }
+        .services-menu.active .services-dropdown {
+            display: block;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .services-menu:hover .services-dropdown {
+                display: block;
+            }
+        }
+        .dropdown-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .dropdown-close-btn:hover {
+            background: #5a0f25;
+            transform: rotate(90deg);
+        }
+        .services-dropdown li {
+            padding: 12px 25px;
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            list-style: none;
+        }
+        .services-dropdown li:hover {
+            background: rgba(255,255,255,0.15);
+            padding-left: 30px;
+        }
+        .services-dropdown a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            display: block;
+        }
+        .services-dropdown li:hover a {
+            color: white;
+        }
+        .submenu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            margin: 10px 15px;
+            border-radius: 6px;
+            padding: 12px 15px !important;
+        }
+        .submenu-toggle:after {
+            content: "›";
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+        .submenu-toggle:hover:after {
+            transform: rotate(90deg);
+        }
+        .service-areas-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: rgba(0,0,0,0.2);
+            margin: 0 15px 10px;
+            border-radius: 6px;
+            padding: 0;
+        }
+        .service-areas-submenu li {
+            padding: 10px 20px;
+            font-size: 14px;
         }
         .hero {
             background: linear-gradient(135deg, var(--red) 0%, #5a0f25 100%);
@@ -580,62 +676,6 @@
             nav { justify-content: center; }
             .contact-info { gap: 30px; }
         }
-        .nav-dropdown {
-            position: relative;
-        }
-        .nav-link {
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 12px 20px;
-            border-radius: 6px;
-            transition: all 0.3s;
-            background: rgba(255, 255, 255, 0.1);
-            display: block;
-            text-decoration: none;
-        }
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            opacity: 1;
-        }
-        .dropdown-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            background: var(--red);
-            min-width: 220px;
-            border-radius: 10px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            padding: 15px 0;
-            z-index: 1000;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        .nav-dropdown.active .dropdown-menu {
-            display: block;
-        }
-        @media (hover: hover) and (pointer: fine) {
-            .nav-dropdown:hover .dropdown-menu {
-                display: block;
-            }
-        }
-        .dropdown-menu li {
-            list-style: none;
-        }
-        .dropdown-menu a {
-            display: block;
-            padding: 12px 25px;
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.3s;
-        }
-        .dropdown-menu a:hover {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            padding-left: 30px;
-            opacity: 1;
-        }
         /* Trust Badges */
         .trust-section {
             padding: 40px 0;
@@ -774,28 +814,29 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo"><img src="/assets/images/miele-logo.png" alt="Miele Vacuum Repair NYC" height="40"></a>
-                <nav>
-                    <div class="nav-dropdown">
-                        <a href="#services" class="nav-link">Vacuum Services</a>
-                        <ul class="dropdown-menu">
+                <div class="nav-right">
+                    <div class="services-menu" id="servicesMenu">
+                        <div class="services-btn" id="servicesToggle">Services</div>
+                        <ul class="services-dropdown" id="servicesDropdown">
+                            <button class="dropdown-close-btn" id="dropdownCloseBtn">&times;</button>
                             <li><a href="#services">Canister Vacuum Repair</a></li>
                             <li><a href="#services">Stick Vacuum Repair</a></li>
                             <li><a href="#services">Robot Vacuum Repair</a></li>
                             <li><a href="#services">Upright Vacuum Repair</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-dropdown">
-                        <a href="#areas" class="nav-link">Service Areas</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#areas">Manhattan</a></li>
-                            <li><a href="#areas">Brooklyn</a></li>
-                            <li><a href="#areas">Queens</a></li>
-                            <li><a href="#areas">Bronx</a></li>
-                            <li><a href="#areas">Staten Island</a></li>
+                            <li><a href="#services">Bagless Vacuum Repair</a></li>
+                            <li><a href="#services">Cordless Vacuum Repair</a></li>
+                            <li class="submenu-toggle" id="serviceAreasToggle">Service Areas</li>
+                            <div class="service-areas-submenu" id="serviceAreasSubmenu">
+                                <li><a href="#services">Manhattan</a></li>
+                                <li><a href="#services">Brooklyn</a></li>
+                                <li><a href="#services">Queens</a></li>
+                                <li><a href="#services">Bronx</a></li>
+                                <li><a href="#services">Staten Island</a></li>
+                            </div>
                         </ul>
                     </div>
                     <button class="nav-cta-btn" id="phoneRevealBtn">Call Toll-Free</button>
-                </nav>
+                </div>
             </div>
         </div>
     </header>
@@ -1306,40 +1347,54 @@
                 });
             });
 
-            // Dropdown toggle - click-based for mobile support
-            document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
-                var toggle = dropdown.querySelector('.nav-link');
+            // Services menu toggle
+            var servicesMenu = document.getElementById('servicesMenu');
+            var servicesToggle = document.getElementById('servicesToggle');
+            var dropdownCloseBtn = document.getElementById('dropdownCloseBtn');
+            var serviceAreasToggle = document.getElementById('serviceAreasToggle');
+            var serviceAreasSubmenu = document.getElementById('serviceAreasSubmenu');
 
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
+            function closeServicesMenu() {
+                servicesMenu.classList.remove('active');
+                if (serviceAreasSubmenu) serviceAreasSubmenu.style.maxHeight = '0';
+            }
+
+            if (servicesToggle) {
+                servicesToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
-
-                    // Close other dropdowns
-                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-                        if (d !== dropdown) {
-                            d.classList.remove('active');
-                        }
-                    });
-
-                    dropdown.classList.toggle('active');
+                    servicesMenu.classList.toggle('active');
                 });
-            });
+            }
 
-            // Close dropdowns when clicking outside
+            if (dropdownCloseBtn) {
+                dropdownCloseBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeServicesMenu();
+                });
+            }
+
+            if (serviceAreasToggle) {
+                serviceAreasToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (serviceAreasSubmenu.style.maxHeight && serviceAreasSubmenu.style.maxHeight !== '0px') {
+                        serviceAreasSubmenu.style.maxHeight = '0';
+                    } else {
+                        serviceAreasSubmenu.style.maxHeight = serviceAreasSubmenu.scrollHeight + 'px';
+                    }
+                });
+            }
+
+            // Close menu when clicking outside
             document.addEventListener('click', function(e) {
-                if (!e.target.closest('.nav-dropdown')) {
-                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-                        d.classList.remove('active');
-                    });
+                if (!e.target.closest('.services-menu')) {
+                    closeServicesMenu();
                 }
             });
 
-            // Close dropdown when clicking a link inside it
-            document.querySelectorAll('.dropdown-menu a').forEach(function(link) {
+            // Close menu when clicking a link
+            document.querySelectorAll('.services-dropdown a').forEach(function(link) {
                 link.addEventListener('click', function() {
-                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-                        d.classList.remove('active');
-                    });
+                    closeServicesMenu();
                 });
             });
 
