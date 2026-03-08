@@ -249,6 +249,47 @@
             color: #666;
             font-size: 0.95rem;
         }
+        .expandable-content {
+            position: relative;
+            margin-top: 15px;
+        }
+        .expandable-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            line-height: 1.7;
+            color: #444;
+            font-size: 0.9rem;
+        }
+        .expandable-text.expanded {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .expandable-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(transparent, white);
+            pointer-events: none;
+            display: none;
+        }
+        .expand-btn {
+            display: block;
+            margin: 10px auto 0;
+            background: none;
+            border: none;
+            color: var(--red);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 15px;
+            transition: color 0.3s;
+        }
+        .expand-btn:hover {
+            color: #5a0f25;
+        }
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -679,46 +720,109 @@
                     <div class="service-image"><img src="/assets/images/vacuums/complete-c3.webp" alt="Miele Complete C3 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Complete C3 Series</h3>
                     <p>Full-size canister vacuums with powerful suction. We repair motors, hoses, powerheads, and all electronic components.</p>
+                    <div class="expandable-content" id="expand-c3">
+                        <div class="expandable-text">
+                            <p><strong>Common Complete C3 Repairs:</strong> Motor replacement, suction loss diagnosis, hose cracks and blockages, powerhead brushroll issues, cord retractor repair, HEPA filter replacement, wand connection problems, and bag compartment seal repair. We service all C3 variants including Marin, Kona, Calima, and Brilliant models with genuine Miele parts.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('c3')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/classic-c1.webp" alt="Miele Classic C1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Classic C1 Series</h3>
                     <p>Compact canister vacuums perfect for smaller spaces. Expert repair for all C1 models and accessories.</p>
+                    <div class="expandable-content" id="expand-c1">
+                        <div class="expandable-text">
+                            <p><strong>Common Classic C1 Repairs:</strong> Motor diagnostics, suction restoration, cable rewind mechanism, dustbag holder repair, body housing cracks, wheel and caster replacement, filter maintenance, and switch repair. We service Pure Suction, Turbo Team, and Cat & Dog C1 variants throughout NYC with same-day appointments available.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('c1')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/compact-c2.webp" alt="Miele Compact C2 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Compact C2 Series</h3>
                     <p>Mid-size canister vacuums with excellent filtration. We service all Compact C2 variants including Electro+ and Cat & Dog.</p>
+                    <div class="expandable-content" id="expand-c2">
+                        <div class="expandable-text">
+                            <p><strong>Common Compact C2 Repairs:</strong> Electrobrush motor repair, suction control issues, telescopic wand problems, AirClean filter system service, foot switch repair, parking clip replacement, and exhaust filter maintenance. Our technicians are experts in C2 Electro+, Cat & Dog, and Hard Floor models with fast turnaround times.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('c2')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/triflex-hx1.webp" alt="Miele Triflex HX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Triflex HX1 Series</h3>
                     <p>Cordless stick vacuums with 3-in-1 design. Battery replacement, motor repair, and full diagnostic service.</p>
+                    <div class="expandable-content" id="expand-triflex">
+                        <div class="expandable-text">
+                            <p><strong>Common Triflex HX1 Repairs:</strong> Battery replacement and reconditioning, brushroll motor failure, suction power loss, charging dock issues, HEPA filter replacement, dust container problems, LED display malfunction, and conversion mechanism repair. We service all Triflex configurations including Pro, Cat & Dog, and Runner models.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('triflex')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/blizzard-cx1.webp" alt="Miele Blizzard CX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Blizzard CX1 Series</h3>
                     <p>Bagless canister vacuums with Vortex Technology. We repair cyclone systems, filters, and all components.</p>
+                    <div class="expandable-content" id="expand-blizzard">
+                        <div class="expandable-text">
+                            <p><strong>Common Blizzard CX1 Repairs:</strong> Vortex cyclone system cleaning and repair, Gore CleanStream filter service, dust container release mechanism, motor protection issues, suction power optimization, powerhead connectivity, and Comfort Handle repair. Expert service for Excellence, Cat & Dog, and Turbo Team Blizzard models.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('blizzard')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/scout-rx3.webp" alt="Miele Scout RX3 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Scout RX3 Robot</h3>
                     <p>Intelligent robot vacuums with smart navigation. Sensor repair, battery service, and software diagnostics.</p>
+                    <div class="expandable-content" id="expand-scout">
+                        <div class="expandable-text">
+                            <p><strong>Common Scout RX3 Repairs:</strong> Navigation sensor calibration, battery replacement, charging contact cleaning, brushroll and side brush replacement, cliff sensor repair, WiFi connectivity issues, app pairing problems, and dustbin mechanism repair. We service Scout RX3 Home Vision and all previous Scout generations.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('scout')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/upright-vacuum.webp" alt="Miele Upright Vacuum Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Dynamic U1 Uprights</h3>
                     <p>Powerful upright vacuums with swivel neck. Complete service for brushrolls, belts, motors, and filtration systems.</p>
+                    <div class="expandable-content" id="expand-u1">
+                        <div class="expandable-text">
+                            <p><strong>Common Dynamic U1 Repairs:</strong> Swivel neck mechanism, brushroll motor replacement, belt replacement, height adjustment repair, headlight replacement, sealed system restoration, bag change indicator issues, and handle lock repair. Expert service for AutoEco, Cat & Dog, Jazz, Twist, and HomeCare U1 models.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('u1')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/boost-cx1.webp" alt="Miele Boost CX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Boost CX1 Series</h3>
                     <p>High-performance bagless vacuums. Expert repair for all Boost models including motor and suction issues.</p>
+                    <div class="expandable-content" id="expand-boost">
+                        <div class="expandable-text">
+                            <p><strong>Common Boost CX1 Repairs:</strong> Mono-cyclone technology service, fine dust filter replacement, self-cleaning filter mechanism, suction power issues, dust container emptying problems, Hygiene Lifetime filter service, and powerhead connectivity. We repair all Boost CX1 variants with genuine Miele replacement parts.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('boost')">+ Show More</button>
                 </div>
                 <div class="service">
                     <div class="service-image"><img src="/assets/images/vacuums/canister-vacuum.webp" alt="Miele Cat & Dog Vacuum Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Cat & Dog Series</h3>
                     <p>Specialized pet hair vacuums with turbo brushes. Filter replacement, odor control service, and deep cleaning maintenance.</p>
+                    <div class="expandable-content" id="expand-catdog">
+                        <div class="expandable-text">
+                            <p><strong>Common Cat & Dog Repairs:</strong> Turbobrush motor and belt service, Active AirClean filter replacement, charcoal odor filter issues, pet hair clog removal, electrobrush restoration, suction optimization for pet homes, and specialized deep cleaning. We service all Cat & Dog models across Complete, Compact, Classic, and Blizzard lines.</p>
+                        </div>
+                        <div class="expandable-fade"></div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand('catdog')">+ Show More</button>
                 </div>
             </div>
         </div>
@@ -954,6 +1058,23 @@
                 modalOverlay.classList.remove('active');
             });
         });
+
+        function toggleExpand(id) {
+            var content = document.getElementById('expand-' + id);
+            var text = content.querySelector('.expandable-text');
+            var btn = content.nextElementSibling;
+            var isExpanded = text.classList.contains('expanded');
+
+            if (isExpanded) {
+                text.classList.remove('expanded');
+                text.style.maxHeight = '0';
+                btn.innerHTML = '+ Show More';
+            } else {
+                text.classList.add('expanded');
+                text.style.maxHeight = text.scrollHeight + 'px';
+                btn.innerHTML = '− Show Less';
+            }
+        }
     </script>
 </body>
 </html>
