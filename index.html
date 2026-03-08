@@ -123,6 +123,10 @@
             transition: opacity 0.3s;
         }
         nav a:hover { opacity: 0.8; }
+        .nav-link {
+            display: block;
+            padding: 5px 0;
+        }
         .nav-cta-btn {
             background: white;
             color: var(--red);
@@ -396,7 +400,8 @@
             right: 0;
             height: 10px;
         }
-        .dropdown-menu.show {
+        .dropdown-menu.show,
+        .nav-dropdown:hover .dropdown-menu {
             display: block;
         }
         .dropdown-menu a {
