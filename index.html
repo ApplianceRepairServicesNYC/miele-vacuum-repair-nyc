@@ -2324,10 +2324,13 @@
 
             if (saToggle && saContent) {
                 saToggle.addEventListener('click', function() {
-                    if (saContent.style.maxHeight && saContent.style.maxHeight !== '0px') {
+                    var isOpen = saContent.style.maxHeight && saContent.style.maxHeight !== '0px';
+                    if (isOpen) {
                         saContent.style.maxHeight = '0';
+                        saContent.style.overflow = 'hidden';
                     } else {
-                        saContent.style.maxHeight = saContent.scrollHeight + 'px';
+                        saContent.style.maxHeight = 'none';
+                        saContent.style.overflow = 'visible';
                     }
                 });
             }
@@ -2344,10 +2347,6 @@
                         tab.classList.toggle('active', i === currentSlide);
                     });
                 }
-                // Update max-height for dropdown
-                if (saContent) {
-                    saContent.style.maxHeight = saContent.scrollHeight + 'px';
-                }
             }
 
             if (saBoroughTabs) {
@@ -2358,6 +2357,8 @@
                     }
                 });
             }
+
+            updateSlider();
 
             // Contact form toggle
             var cfBookButton = document.getElementById('cfBookButton');
