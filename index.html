@@ -650,6 +650,109 @@
         .cf-close-modal:hover {
             background: #5a0f25;
         }
+        #sa-service-areas {
+            background: transparent;
+            border: 2px solid #808080;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+            padding: 30px;
+            margin-bottom: 30px;
+            max-width: 1200px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        #sa-service-areas h2 {
+            font-size: 28px;
+            text-align: center;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+        #sa-service-areas p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .sa-dropdown-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .sa-dropdown-button {
+            padding: 14px 32px;
+            border: none;
+            background: linear-gradient(45deg, var(--red), #5a0f25);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 4px 15px rgba(139, 21, 56, .4);
+        }
+        .sa-dropdown-button:hover {
+            background: linear-gradient(45deg, #5a0f25, #3d0a19);
+            transform: translateY(-3px);
+        }
+        .sa-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s;
+            background: transparent;
+        }
+        .sa-slide {
+            padding-top: 20px;
+        }
+        .sa-slide h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .sa-slide ul {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+            list-style: none;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        @media (max-width: 768px) {
+            .sa-slide ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .sa-slide ul {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sa-slide ul li {
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 10px;
+            background: rgba(240, 244, 255, .9);
+            transition: all .3s;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+        .sa-slide ul li:hover {
+            background: #fce4ec;
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+        .sa-slide ul li h3 {
+            margin: 0;
+            font-size: 17px;
+            color: var(--red);
+            font-weight: 600;
+        }
+        .sa-slide ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
         .footer-main {
             background: #1a1a1a;
             padding: 60px 0 40px;
@@ -846,6 +949,9 @@
                 justify-content: center;
             }
             nav { justify-content: center; }
+            .hero-buttons {
+                justify-content: center;
+            }
             .contact-info { gap: 30px; }
         }
         /* Reviews Modal */
@@ -1072,7 +1178,7 @@
                 <div class="hero-text">
                     <h1>Expert Miele Vacuum Repair in NYC</h1>
                     <p style="font-size: 1.1rem; opacity: 0.95;">Same-Day Service • Factory-Certified Technicians • All Five Boroughs</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="hero-buttons" style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <button class="btn" id="phoneRevealBtn2">Schedule Online</button>
                         <button class="btn btn-secondary modal-trigger" data-modal="reviewsModal">★ Read Reviews</button>
                     </div>
@@ -1473,6 +1579,41 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
+            <section id="sa-service-areas">
+                <h2>Miele Vacuum Repair Specialists</h2>
+                <p>We proudly serve <strong>all five boroughs</strong> of New York City with fast, reliable, same-day Miele vacuum repair.</p>
+                <div class="sa-dropdown-container">
+                    <button class="sa-dropdown-button" id="saToggleBtn">View All NYC Service Areas</button>
+                    <div class="sa-dropdown-content" id="saDropdownContent">
+                        <div class="sa-slide">
+                            <h2>Miele Vacuum Repair Service Areas in NYC</h2>
+                            <ul id="townsList">
+                                <li><a href="#contact"><h3>Manhattan</h3></a></li>
+                                <li><a href="#contact"><h3>Brooklyn</h3></a></li>
+                                <li><a href="#contact"><h3>Queens</h3></a></li>
+                                <li><a href="#contact"><h3>Bronx</h3></a></li>
+                                <li><a href="#contact"><h3>Staten Island</h3></a></li>
+                                <li><a href="#contact"><h3>Upper East Side</h3></a></li>
+                                <li><a href="#contact"><h3>Upper West Side</h3></a></li>
+                                <li><a href="#contact"><h3>Midtown</h3></a></li>
+                                <li><a href="#contact"><h3>Chelsea</h3></a></li>
+                                <li><a href="#contact"><h3>SoHo</h3></a></li>
+                                <li><a href="#contact"><h3>Tribeca</h3></a></li>
+                                <li><a href="#contact"><h3>Greenwich Village</h3></a></li>
+                                <li><a href="#contact"><h3>East Village</h3></a></li>
+                                <li><a href="#contact"><h3>Financial District</h3></a></li>
+                                <li><a href="#contact"><h3>Harlem</h3></a></li>
+                                <li><a href="#contact"><h3>Williamsburg</h3></a></li>
+                                <li><a href="#contact"><h3>Park Slope</h3></a></li>
+                                <li><a href="#contact"><h3>DUMBO</h3></a></li>
+                                <li><a href="#contact"><h3>Astoria</h3></a></li>
+                                <li><a href="#contact"><h3>Long Island City</h3></a></li>
+                                <li><a href="#contact"><h3>Flushing</h3></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="cf-schedule-container">
                 <div class="cf-schedule-text">Schedule Your Miele Vacuum Repair</div>
                 <button class="cf-book-button" id="cfBookButton">Book Online</button>
@@ -1950,6 +2091,19 @@
                         var display = '1-800-988-5561';
                         this.innerHTML = display;
                         this.onclick = function() { window.location.href = 'tel:' + num; };
+                    }
+                });
+            }
+
+            // Service areas toggle
+            var saToggle = document.getElementById('saToggleBtn');
+            var saContent = document.getElementById('saDropdownContent');
+            if (saToggle && saContent) {
+                saToggle.addEventListener('click', function() {
+                    if (saContent.style.maxHeight && saContent.style.maxHeight !== '0px') {
+                        saContent.style.maxHeight = '0';
+                    } else {
+                        saContent.style.maxHeight = saContent.scrollHeight + 'px';
                     }
                 });
             }
