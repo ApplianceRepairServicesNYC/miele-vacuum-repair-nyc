@@ -1411,10 +1411,14 @@
             if (isExpanded) {
                 text.classList.remove('expanded');
                 text.style.maxHeight = '0';
+                text.style.overflowY = 'hidden';
+                text.style.paddingRight = '0';
                 btn.innerHTML = '+ Show More';
             } else {
                 text.classList.add('expanded');
-                text.style.maxHeight = text.scrollHeight + 'px';
+                text.style.maxHeight = '200px';
+                text.style.overflowY = 'auto';
+                text.style.paddingRight = '10px';
                 btn.innerHTML = '− Show Less';
             }
         }
