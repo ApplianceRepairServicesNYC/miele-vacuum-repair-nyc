@@ -1480,7 +1480,7 @@
         </div>
         <div class="modal-content">
             <div id="elfsightContainer">
-                <div class="elfsight-app-reviews" data-elfsight-app-lazy></div>
+                <div class="elfsight-app-2942fb52-4463-41bc-bc83-d831b9da6f0e"></div>
             </div>
             <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
                 <button id="writeReviewBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
@@ -1659,6 +1659,17 @@
                 footerOverlay.classList.remove('active');
             });
 
+            // Lazy load Elfsight when reviews modal opens
+            var elfsightLoaded = false;
+            function loadElfsight() {
+                if (elfsightLoaded) return;
+                var script = document.createElement('script');
+                script.src = 'https://static.elfsight.com/platform/platform.js';
+                script.async = true;
+                document.body.appendChild(script);
+                elfsightLoaded = true;
+            }
+
             // Reviews modal functionality
             document.querySelectorAll('.modal-trigger').forEach(function(trigger) {
                 trigger.addEventListener('click', function(e) {
@@ -1669,6 +1680,7 @@
                         modalOverlay.classList.add('active');
                         targetModal.classList.add('active');
                         document.body.style.overflow = 'hidden';
+                        if (modalId === 'reviewsModal') loadElfsight();
                     }
                 });
             });
