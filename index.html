@@ -364,41 +364,176 @@
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
-        footer {
+        .footer-main {
             background: #1a1a1a;
-            color: #ccc;
-            padding: 40px 0 20px;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #333;
+            color: #b0b0b0;
         }
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 15px;
+        .footer-column h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
-        .footer-section ul {
+        .footer-column p {
+            margin: 8px 0;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        .footer-column ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .footer-section li {
-            margin-bottom: 8px;
+        .footer-column ul li {
+            margin: 12px 0;
         }
-        .footer-section a {
-            color: #ccc;
+        .footer-column ul li a {
+            color: #b0b0b0;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 14px;
+            transition: all 0.3s;
         }
-        .footer-section a:hover {
-            color: white;
+        .footer-column ul li a:hover {
+            color: var(--red);
+            padding-left: 5px;
+        }
+        .footer-brand h2 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .footer-hours {
+            background: rgba(139, 21, 56, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--red);
+        }
+        .footer-hours p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .footer-hours strong {
+            color: #fff;
         }
         .footer-bottom {
+            background: #0d0d0d;
+            padding: 25px 0;
+        }
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-bottom p {
+            margin: 8px 0;
+            font-size: 13px;
+            color: #888;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #333;
+        }
+        .footer-credential {
+            color: #aaa;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted #666;
+        }
+        .footer-credential:hover {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+        /* Footer Modal System */
+        .footer-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9998;
+        }
+        .footer-modal-overlay.active {
+            display: block;
+        }
+        .footer-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            z-index: 9999;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+        }
+        .footer-modal.active {
+            display: block;
+        }
+        .footer-modal-header {
+            background: var(--red);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+            color: white;
+        }
+        .footer-modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .footer-modal-close:hover {
+            background: #5a0f25;
+            transform: rotate(90deg);
+        }
+        .footer-modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        .footer-modal-body p {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
@@ -419,40 +554,59 @@
         }
         .nav-dropdown {
             position: relative;
-            padding: 10px 0;
+        }
+        .nav-link {
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            display: block;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
         }
         .dropdown-menu {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: -10px;
-            background: white;
-            min-width: 200px;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            padding: 10px 0;
-            z-index: 100;
+            position: fixed;
+            top: 70px;
+            background: var(--red);
+            min-width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            padding: 15px 0;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
-        .dropdown-menu::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 0;
-            right: 0;
-            height: 10px;
-        }
-        .dropdown-menu.show,
-        .nav-dropdown:hover .dropdown-menu {
+        .nav-dropdown.active .dropdown-menu {
             display: block;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .nav-dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu li {
+            list-style: none;
         }
         .dropdown-menu a {
             display: block;
-            padding: 10px 20px;
-            color: #333;
+            padding: 12px 25px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s;
         }
         .dropdown-menu a:hover {
-            background: var(--gray);
-            color: var(--red);
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding-left: 30px;
+            opacity: 1;
         }
         /* Trust Badges */
         .trust-section {
@@ -940,23 +1094,32 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Miele Vacuum Repair NYC</h4>
-                    <p>Professional Miele vacuum repair service serving all of New York City.</p>
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h2>Miele Vacuum Repair Service Of New York</h2>
+                    <p>401 Park Avenue South<br>New York, NY 10016</p>
+                    <p style="margin-top: 15px;">Expert Miele vacuum repair serving all five boroughs of New York City. Same-day service available for all Miele vacuum models.</p>
+                    <div class="footer-hours">
+                        <p><strong>Business Hours</strong></p>
+                        <p>Monday - Sunday<br>7:00 AM – 8:00 PM</p>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Vacuum Services</h4>
+
+                <div class="footer-column">
+                    <h3>Vacuum Services</h3>
                     <ul>
                         <li><a href="#services">Canister Vacuum Repair</a></li>
                         <li><a href="#services">Stick Vacuum Repair</a></li>
                         <li><a href="#services">Robot Vacuum Repair</a></li>
                         <li><a href="#services">Upright Vacuum Repair</a></li>
+                        <li><a href="#services">Bagless Vacuum Repair</a></li>
+                        <li><a href="#services">Cordless Vacuum Repair</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Service Areas</h4>
+
+                <div class="footer-column">
+                    <h3>Service Areas</h3>
                     <ul>
                         <li><a href="#areas">Manhattan</a></li>
                         <li><a href="#areas">Brooklyn</a></li>
@@ -965,21 +1128,111 @@
                         <li><a href="#areas">Staten Island</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#services">Sitemap</a></li>
-                        <li><a href="#contact">Privacy Policy</a></li>
-                        <li><a href="#contact">Terms of Service</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#contact">Schedule Service</a></li>
+                        <li><a href="#" class="footer-modal-trigger" data-modal="privacyModal">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-modal-trigger" data-modal="termsModal">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>Miele Vacuum Repair Service Of New York</p>
-                <p>&copy; 2025 Miele Vacuum Repair NYC. All rights reserved.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 Miele Vacuum Repair NYC. All Rights Reserved.</p>
+                <p><a href="#" class="footer-credential footer-modal-trigger" data-modal="licensedModal">Licensed & Insured</a> &bull; <a href="#" class="footer-credential footer-modal-trigger" data-modal="certifiedModal">Factory Certified Technicians</a> &bull; <a href="#" class="footer-credential footer-modal-trigger" data-modal="samedayModal">Same-Day Service Available</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Footer Modal Overlay -->
+    <div class="footer-modal-overlay" id="footerModalOverlay"></div>
+
+    <!-- Licensed & Insured Modal -->
+    <div class="footer-modal" id="licensedModal">
+        <div class="footer-modal-header">
+            <h2>Licensed & Insured</h2>
+            <button class="footer-modal-close">&times;</button>
+        </div>
+        <div class="footer-modal-body">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span style="font-size: 48px;">🛡️</span>
+            </div>
+            <p><strong>Fully Licensed:</strong> Our technicians hold all required state and local licenses to perform vacuum repairs in New York. We comply with all regulatory requirements and industry standards.</p>
+            <p><strong>Fully Insured:</strong> We carry comprehensive liability insurance and workers compensation coverage. This protects you, your home, and our technicians during every service call.</p>
+            <p style="color: #666; font-size: 14px; font-style: italic;">Your peace of mind is our priority. Ask to see our credentials at any time.</p>
+        </div>
+    </div>
+
+    <!-- Factory Certified Modal -->
+    <div class="footer-modal" id="certifiedModal">
+        <div class="footer-modal-header">
+            <h2>Factory Certified Technicians</h2>
+            <button class="footer-modal-close">&times;</button>
+        </div>
+        <div class="footer-modal-body">
+            <p><strong>Factory Authorized Service:</strong> All of our technicians are factory-trained and certified to service the complete Miele vacuum lineup. This certification represents our commitment to delivering the highest standard of repair service.</p>
+            <p><strong>What This Means For You:</strong></p>
+            <ul style="color: #333; font-size: 15px; line-height: 1.8; margin-bottom: 15px; padding-left: 20px;">
+                <li>Proper diagnosis and accurate identification of issues</li>
+                <li>Access to genuine Miele replacement parts</li>
+                <li>Repairs performed to manufacturer specifications</li>
+                <li>Warranty protection maintained</li>
+                <li>Extended equipment life through expert care</li>
+            </ul>
+            <p>We service all Miele vacuum models including Complete C3, Classic C1, Compact C2, Triflex HX1, Blizzard CX1, Scout RX3, and Dynamic U1 series.</p>
+        </div>
+    </div>
+
+    <!-- Same-Day Service Modal -->
+    <div class="footer-modal" id="samedayModal">
+        <div class="footer-modal-header">
+            <h2>Same-Day Service Available</h2>
+            <button class="footer-modal-close">&times;</button>
+        </div>
+        <div class="footer-modal-body">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span style="font-size: 48px;">⚡</span>
+            </div>
+            <p><strong>Fast Response Times:</strong> Most times we can provide same-day service or schedule your appointment within 24 hours. We understand that a broken vacuum disrupts your cleaning routine.</p>
+            <p><strong>Flexible Scheduling:</strong> We offer morning, afternoon, and evening appointment windows to fit your busy schedule. Weekend appointments are also available.</p>
+            <p><strong>Stocked Service Vehicles:</strong> Our vans carry common replacement parts, allowing many repairs to be completed in a single visit.</p>
+            <p style="color: #666; font-size: 14px; font-style: italic;">*Same-day service subject to availability and location within NYC.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="footer-modal" id="privacyModal">
+        <div class="footer-modal-header">
+            <h2>Privacy Policy</h2>
+            <button class="footer-modal-close">&times;</button>
+        </div>
+        <div class="footer-modal-body">
+            <p><strong>Information We Collect:</strong> We collect information you provide when scheduling service, including name, address, phone number, and email. This information is used solely to provide and improve our repair services.</p>
+            <p><strong>How We Use Your Information:</strong> Your information is used to schedule appointments, communicate about your service, and provide customer support. We never sell your personal information to third parties.</p>
+            <p><strong>Data Security:</strong> We implement appropriate security measures to protect your personal information from unauthorized access or disclosure.</p>
+            <p><strong>Contact Us:</strong> If you have questions about our privacy practices, please contact us during business hours.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="footer-modal" id="termsModal">
+        <div class="footer-modal-header">
+            <h2>Terms of Service</h2>
+            <button class="footer-modal-close">&times;</button>
+        </div>
+        <div class="footer-modal-body">
+            <p><strong>Service Agreement:</strong> By scheduling a repair appointment, you agree to provide access to the vacuum requiring service and authorize our technicians to perform diagnostics and repairs.</p>
+            <p><strong>Pricing:</strong> All repair estimates are provided before work begins. Additional parts or labor will be discussed and approved before proceeding.</p>
+            <p><strong>Warranty:</strong> All repairs include a warranty on parts and labor. Warranty terms vary by repair type and will be explained at time of service.</p>
+            <p><strong>Cancellation:</strong> Please provide at least 24 hours notice for appointment cancellations or rescheduling.</p>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1000,32 +1253,41 @@
                 });
             });
 
-            // Dropdown toggle
+            // Dropdown toggle - click-based for mobile support
             document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
                 var toggle = dropdown.querySelector('.nav-link');
-                var menu = dropdown.querySelector('.dropdown-menu');
-
-                dropdown.addEventListener('mouseenter', function() {
-                    menu.classList.add('show');
-                });
-
-                dropdown.addEventListener('mouseleave', function() {
-                    menu.classList.remove('show');
-                });
 
                 toggle.addEventListener('click', function(e) {
                     e.preventDefault();
-                    menu.classList.toggle('show');
+                    e.stopPropagation();
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+                        if (d !== dropdown) {
+                            d.classList.remove('active');
+                        }
+                    });
+
+                    dropdown.classList.toggle('active');
                 });
             });
 
             // Close dropdowns when clicking outside
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.nav-dropdown')) {
-                    document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-                        menu.classList.remove('show');
+                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+                        d.classList.remove('active');
                     });
                 }
+            });
+
+            // Close dropdown when clicking a link inside it
+            document.querySelectorAll('.dropdown-menu a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+                        d.classList.remove('active');
+                    });
+                });
             });
 
             // Trust badge modal functionality
@@ -1056,6 +1318,34 @@
             modalOverlay.addEventListener('click', function() {
                 modal.classList.remove('active');
                 modalOverlay.classList.remove('active');
+            });
+
+            // Footer modal functionality
+            var footerOverlay = document.getElementById('footerModalOverlay');
+            document.querySelectorAll('.footer-modal-trigger').forEach(function(trigger) {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var modalId = this.getAttribute('data-modal');
+                    var targetModal = document.getElementById(modalId);
+                    if (targetModal) {
+                        targetModal.classList.add('active');
+                        footerOverlay.classList.add('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.footer-modal-close').forEach(function(closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    this.closest('.footer-modal').classList.remove('active');
+                    footerOverlay.classList.remove('active');
+                });
+            });
+
+            footerOverlay.addEventListener('click', function() {
+                document.querySelectorAll('.footer-modal').forEach(function(m) {
+                    m.classList.remove('active');
+                });
+                footerOverlay.classList.remove('active');
             });
         });
 
