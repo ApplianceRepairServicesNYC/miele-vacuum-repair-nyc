@@ -708,12 +708,44 @@
             transition: max-height .5s;
             background: transparent;
         }
+        .sa-borough-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .sa-borough-tab {
+            padding: 10px 20px;
+            border: 2px solid var(--red);
+            background: transparent;
+            color: var(--red);
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .sa-borough-tab:hover, .sa-borough-tab.active {
+            background: var(--red);
+            color: white;
+        }
+        .sa-slider-container {
+            overflow: hidden;
+        }
         .sa-slide {
-            padding-top: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .sa-slide:first-child {
+            display: block;
         }
         .sa-slide h2 {
             font-size: 22px;
-            margin-bottom: 20px;
+            text-align: center;
+            color: var(--red);
+            margin-bottom: 15px;
         }
         .sa-slide ul {
             background: rgba(255, 255, 255, .95);
@@ -722,45 +754,52 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
             list-style: none;
             margin: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        @media (max-width: 768px) {
-            .sa-slide ul {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .sa-slide ul {
-                grid-template-columns: 1fr;
-            }
+            column-gap: 30px;
+            columns: 3;
         }
         .sa-slide ul li {
-            min-height: 50px;
-            display: flex;
-            align-items: center;
             padding: 12px 15px;
+            margin: 8px 0;
             border-radius: 10px;
             background: rgba(240, 244, 255, .9);
             transition: all .3s;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            break-inside: avoid;
         }
         .sa-slide ul li:hover {
             background: #fce4ec;
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+        .sa-slide ul li:hover h3 {
+            color: #5a0f25;
         }
         .sa-slide ul li h3 {
             margin: 0;
-            font-size: 17px;
+            font-size: 16px;
             color: var(--red);
             font-weight: 600;
+            transition: color .3s;
         }
-        .sa-slide ul li a {
-            text-decoration: none;
-            color: inherit;
+        .sa-slide ul li .zip-code {
+            font-size: 13px;
+            color: #555;
+            margin-top: 6px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height .4s, opacity .4s;
+        }
+        .sa-slide ul li.show-zip .zip-code {
+            max-height: 30px;
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .sa-slide ul { columns: 2; }
+            .sa-borough-tabs { gap: 8px; }
+            .sa-borough-tab { padding: 8px 14px; font-size: 13px; }
+        }
+        @media (max-width: 480px) {
+            .sa-slide ul { columns: 1; }
         }
         .footer-main {
             background: #1a1a1a;
@@ -1589,36 +1628,207 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <section id="sa-service-areas">
-                <h2>Miele Vacuum Repair Specialists</h2>
-                <p>We proudly serve <strong>all five boroughs</strong> of New York City with fast, reliable, same-day Miele vacuum repair.</p>
+                <h2>Service Areas – New York City</h2>
+                <p>We proudly serve <strong>Manhattan, Brooklyn, Queens, Bronx & Staten Island</strong> with fast, reliable, same-day Miele vacuum repair.</p>
                 <div class="sa-dropdown-container">
                     <button class="sa-dropdown-button" id="saToggleBtn">View All NYC Service Areas</button>
                     <div class="sa-dropdown-content" id="saDropdownContent">
-                        <div class="sa-slide">
-                            <h2>Miele Vacuum Repair Service Areas in NYC</h2>
-                            <ul id="townsList">
-                                <li><a href="#contact"><h3>Manhattan</h3></a></li>
-                                <li><a href="#contact"><h3>Brooklyn</h3></a></li>
-                                <li><a href="#contact"><h3>Queens</h3></a></li>
-                                <li><a href="#contact"><h3>Bronx</h3></a></li>
-                                <li><a href="#contact"><h3>Staten Island</h3></a></li>
-                                <li><a href="#contact"><h3>Upper East Side</h3></a></li>
-                                <li><a href="#contact"><h3>Upper West Side</h3></a></li>
-                                <li><a href="#contact"><h3>Midtown</h3></a></li>
-                                <li><a href="#contact"><h3>Chelsea</h3></a></li>
-                                <li><a href="#contact"><h3>SoHo</h3></a></li>
-                                <li><a href="#contact"><h3>Tribeca</h3></a></li>
-                                <li><a href="#contact"><h3>Greenwich Village</h3></a></li>
-                                <li><a href="#contact"><h3>East Village</h3></a></li>
-                                <li><a href="#contact"><h3>Financial District</h3></a></li>
-                                <li><a href="#contact"><h3>Harlem</h3></a></li>
-                                <li><a href="#contact"><h3>Williamsburg</h3></a></li>
-                                <li><a href="#contact"><h3>Park Slope</h3></a></li>
-                                <li><a href="#contact"><h3>DUMBO</h3></a></li>
-                                <li><a href="#contact"><h3>Astoria</h3></a></li>
-                                <li><a href="#contact"><h3>Long Island City</h3></a></li>
-                                <li><a href="#contact"><h3>Flushing</h3></a></li>
-                            </ul>
+                        <div class="sa-borough-tabs" id="saBoroughTabs">
+                            <button class="sa-borough-tab active" data-borough="0">Manhattan</button>
+                            <button class="sa-borough-tab" data-borough="1">Brooklyn</button>
+                            <button class="sa-borough-tab" data-borough="2">Queens</button>
+                            <button class="sa-borough-tab" data-borough="3">Bronx</button>
+                            <button class="sa-borough-tab" data-borough="4">Staten Island</button>
+                        </div>
+                        <div class="sa-slider-container" id="saSliderContainer">
+                            <div class="sa-slide" id="slide-manhattan">
+                                <h2>Manhattan Neighborhoods We Service</h2>
+                                <ul>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Upper East Side</h3><div class="zip-code">ZIP: 10021, 10028, 10065, 10075, 10128</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Upper West Side</h3><div class="zip-code">ZIP: 10023, 10024, 10025</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Midtown East</h3><div class="zip-code">ZIP: 10017, 10022, 10055</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Midtown West</h3><div class="zip-code">ZIP: 10019, 10036</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Chelsea</h3><div class="zip-code">ZIP: 10001, 10011</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Greenwich Village</h3><div class="zip-code">ZIP: 10011, 10012, 10014</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>East Village</h3><div class="zip-code">ZIP: 10003, 10009</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>West Village</h3><div class="zip-code">ZIP: 10011, 10014</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>SoHo</h3><div class="zip-code">ZIP: 10012, 10013</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Tribeca</h3><div class="zip-code">ZIP: 10007, 10013</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Financial District</h3><div class="zip-code">ZIP: 10004, 10005, 10006, 10038</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Harlem</h3><div class="zip-code">ZIP: 10026, 10027, 10030, 10037</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Washington Heights</h3><div class="zip-code">ZIP: 10032, 10033, 10040</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Inwood</h3><div class="zip-code">ZIP: 10034, 10040</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Murray Hill</h3><div class="zip-code">ZIP: 10016</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Gramercy</h3><div class="zip-code">ZIP: 10003, 10010</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Flatiron District</h3><div class="zip-code">ZIP: 10010, 10016</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>NoHo</h3><div class="zip-code">ZIP: 10003, 10012</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Nolita</h3><div class="zip-code">ZIP: 10012, 10013</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Little Italy</h3><div class="zip-code">ZIP: 10012, 10013</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Chinatown</h3><div class="zip-code">ZIP: 10002, 10013</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Lower East Side</h3><div class="zip-code">ZIP: 10002</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Battery Park City</h3><div class="zip-code">ZIP: 10280, 10281, 10282</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Hell's Kitchen</h3><div class="zip-code">ZIP: 10019, 10036</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Lincoln Square</h3><div class="zip-code">ZIP: 10023, 10024</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Morningside Heights</h3><div class="zip-code">ZIP: 10025, 10027</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Carnegie Hill</h3><div class="zip-code">ZIP: 10028</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Yorkville</h3><div class="zip-code">ZIP: 10028, 10128</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Lenox Hill</h3><div class="zip-code">ZIP: 10021, 10065, 10075</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Sutton Place</h3><div class="zip-code">ZIP: 10022</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Tudor City</h3><div class="zip-code">ZIP: 10017</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Turtle Bay</h3><div class="zip-code">ZIP: 10017, 10022</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Kips Bay</h3><div class="zip-code">ZIP: 10016</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Roosevelt Island</h3><div class="zip-code">ZIP: 10044</div></li>
+                                </ul>
+                            </div>
+                            <div class="sa-slide" id="slide-brooklyn">
+                                <h2>Brooklyn Neighborhoods We Service</h2>
+                                <ul>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Williamsburg</h3><div class="zip-code">ZIP: 11206, 11211, 11249</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Brooklyn Heights</h3><div class="zip-code">ZIP: 11201</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>DUMBO</h3><div class="zip-code">ZIP: 11201</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Park Slope</h3><div class="zip-code">ZIP: 11215, 11217</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Carroll Gardens</h3><div class="zip-code">ZIP: 11231</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Cobble Hill</h3><div class="zip-code">ZIP: 11201</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Boerum Hill</h3><div class="zip-code">ZIP: 11217</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Fort Greene</h3><div class="zip-code">ZIP: 11205, 11217</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Clinton Hill</h3><div class="zip-code">ZIP: 11205, 11238</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Prospect Heights</h3><div class="zip-code">ZIP: 11238</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Crown Heights</h3><div class="zip-code">ZIP: 11213, 11216, 11225, 11238</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bedford-Stuyvesant</h3><div class="zip-code">ZIP: 11205, 11206, 11216, 11221, 11233</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bushwick</h3><div class="zip-code">ZIP: 11206, 11221, 11237</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Greenpoint</h3><div class="zip-code">ZIP: 11222</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Red Hook</h3><div class="zip-code">ZIP: 11231</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Gowanus</h3><div class="zip-code">ZIP: 11215, 11217</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Sunset Park</h3><div class="zip-code">ZIP: 11220, 11232</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bay Ridge</h3><div class="zip-code">ZIP: 11209, 11220</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Dyker Heights</h3><div class="zip-code">ZIP: 11228</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bensonhurst</h3><div class="zip-code">ZIP: 11204, 11214</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Borough Park</h3><div class="zip-code">ZIP: 11219</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Flatbush</h3><div class="zip-code">ZIP: 11226</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Midwood</h3><div class="zip-code">ZIP: 11230</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Sheepshead Bay</h3><div class="zip-code">ZIP: 11235</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Brighton Beach</h3><div class="zip-code">ZIP: 11235</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Coney Island</h3><div class="zip-code">ZIP: 11224</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Gravesend</h3><div class="zip-code">ZIP: 11223</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Marine Park</h3><div class="zip-code">ZIP: 11234</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Mill Basin</h3><div class="zip-code">ZIP: 11234</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Canarsie</h3><div class="zip-code">ZIP: 11236</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>East New York</h3><div class="zip-code">ZIP: 11207, 11208</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Brownsville</h3><div class="zip-code">ZIP: 11212</div></li>
+                                </ul>
+                            </div>
+                            <div class="sa-slide" id="slide-queens">
+                                <h2>Queens Neighborhoods We Service</h2>
+                                <ul>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Astoria</h3><div class="zip-code">ZIP: 11102, 11103, 11105, 11106</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Long Island City</h3><div class="zip-code">ZIP: 11101, 11109</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Sunnyside</h3><div class="zip-code">ZIP: 11104</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Woodside</h3><div class="zip-code">ZIP: 11377</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Jackson Heights</h3><div class="zip-code">ZIP: 11372</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Elmhurst</h3><div class="zip-code">ZIP: 11373</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Corona</h3><div class="zip-code">ZIP: 11368</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Flushing</h3><div class="zip-code">ZIP: 11354, 11355, 11358</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bayside</h3><div class="zip-code">ZIP: 11360, 11361</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Forest Hills</h3><div class="zip-code">ZIP: 11375</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Rego Park</h3><div class="zip-code">ZIP: 11374</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Kew Gardens</h3><div class="zip-code">ZIP: 11415</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Jamaica</h3><div class="zip-code">ZIP: 11432, 11433, 11434, 11435</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Jamaica Estates</h3><div class="zip-code">ZIP: 11432</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Hollis</h3><div class="zip-code">ZIP: 11423</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>St. Albans</h3><div class="zip-code">ZIP: 11412</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Queens Village</h3><div class="zip-code">ZIP: 11427, 11428, 11429</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Fresh Meadows</h3><div class="zip-code">ZIP: 11365, 11366</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Little Neck</h3><div class="zip-code">ZIP: 11362, 11363</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Douglaston</h3><div class="zip-code">ZIP: 11362, 11363</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Whitestone</h3><div class="zip-code">ZIP: 11357</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>College Point</h3><div class="zip-code">ZIP: 11356</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Maspeth</h3><div class="zip-code">ZIP: 11378</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Middle Village</h3><div class="zip-code">ZIP: 11379</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Ridgewood</h3><div class="zip-code">ZIP: 11385</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Glendale</h3><div class="zip-code">ZIP: 11385</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Howard Beach</h3><div class="zip-code">ZIP: 11414</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Ozone Park</h3><div class="zip-code">ZIP: 11416, 11417</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Richmond Hill</h3><div class="zip-code">ZIP: 11418, 11419</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Woodhaven</h3><div class="zip-code">ZIP: 11421</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Far Rockaway</h3><div class="zip-code">ZIP: 11691, 11693</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Rockaway Beach</h3><div class="zip-code">ZIP: 11693, 11694</div></li>
+                                </ul>
+                            </div>
+                            <div class="sa-slide" id="slide-bronx">
+                                <h2>Bronx Neighborhoods We Service</h2>
+                                <ul>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Riverdale</h3><div class="zip-code">ZIP: 10463, 10471</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Fieldston</h3><div class="zip-code">ZIP: 10471</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Kingsbridge</h3><div class="zip-code">ZIP: 10463</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bedford Park</h3><div class="zip-code">ZIP: 10458</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Fordham</h3><div class="zip-code">ZIP: 10458</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>University Heights</h3><div class="zip-code">ZIP: 10453</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Morris Heights</h3><div class="zip-code">ZIP: 10453</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Highbridge</h3><div class="zip-code">ZIP: 10452</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Concourse</h3><div class="zip-code">ZIP: 10451, 10456</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Mott Haven</h3><div class="zip-code">ZIP: 10454, 10455</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Melrose</h3><div class="zip-code">ZIP: 10451, 10455</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Hunts Point</h3><div class="zip-code">ZIP: 10474</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Longwood</h3><div class="zip-code">ZIP: 10459</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Morrisania</h3><div class="zip-code">ZIP: 10456</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Tremont</h3><div class="zip-code">ZIP: 10457</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Belmont</h3><div class="zip-code">ZIP: 10458</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bronx Park</h3><div class="zip-code">ZIP: 10460, 10467</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Pelham Bay</h3><div class="zip-code">ZIP: 10461, 10464</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Throgs Neck</h3><div class="zip-code">ZIP: 10465</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Country Club</h3><div class="zip-code">ZIP: 10465</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>City Island</h3><div class="zip-code">ZIP: 10464</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Co-op City</h3><div class="zip-code">ZIP: 10475</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Eastchester</h3><div class="zip-code">ZIP: 10469</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Wakefield</h3><div class="zip-code">ZIP: 10466</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Woodlawn</h3><div class="zip-code">ZIP: 10470</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Norwood</h3><div class="zip-code">ZIP: 10467</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Williamsbridge</h3><div class="zip-code">ZIP: 10467</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Baychester</h3><div class="zip-code">ZIP: 10469</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Parkchester</h3><div class="zip-code">ZIP: 10462</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Castle Hill</h3><div class="zip-code">ZIP: 10473</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Soundview</h3><div class="zip-code">ZIP: 10472, 10473</div></li>
+                                </ul>
+                            </div>
+                            <div class="sa-slide" id="slide-staten-island">
+                                <h2>Staten Island Neighborhoods We Service</h2>
+                                <ul>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>St. George</h3><div class="zip-code">ZIP: 10301</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Stapleton</h3><div class="zip-code">ZIP: 10304</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Tompkinsville</h3><div class="zip-code">ZIP: 10301, 10304</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Clifton</h3><div class="zip-code">ZIP: 10304</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Rosebank</h3><div class="zip-code">ZIP: 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Grasmere</h3><div class="zip-code">ZIP: 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Arrochar</h3><div class="zip-code">ZIP: 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>South Beach</h3><div class="zip-code">ZIP: 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Midland Beach</h3><div class="zip-code">ZIP: 10306</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>New Dorp</h3><div class="zip-code">ZIP: 10306</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Oakwood</h3><div class="zip-code">ZIP: 10306</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Great Kills</h3><div class="zip-code">ZIP: 10308</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Eltingville</h3><div class="zip-code">ZIP: 10312</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Annadale</h3><div class="zip-code">ZIP: 10312</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Huguenot</h3><div class="zip-code">ZIP: 10312</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Prince's Bay</h3><div class="zip-code">ZIP: 10309</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Pleasant Plains</h3><div class="zip-code">ZIP: 10309</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Tottenville</h3><div class="zip-code">ZIP: 10307</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Charleston</h3><div class="zip-code">ZIP: 10309</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Rossville</h3><div class="zip-code">ZIP: 10309</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Woodrow</h3><div class="zip-code">ZIP: 10309</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Travis</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>New Springville</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Bulls Head</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Willowbrook</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Westerleigh</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Port Richmond</h3><div class="zip-code">ZIP: 10302</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Mariners Harbor</h3><div class="zip-code">ZIP: 10303</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>West Brighton</h3><div class="zip-code">ZIP: 10310</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Castleton Corners</h3><div class="zip-code">ZIP: 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Todt Hill</h3><div class="zip-code">ZIP: 10304, 10314</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Dongan Hills</h3><div class="zip-code">ZIP: 10304, 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Emerson Hill</h3><div class="zip-code">ZIP: 10304, 10305</div></li>
+                                    <li onclick="this.classList.toggle('show-zip')"><h3>Grymes Hill</h3><div class="zip-code">ZIP: 10301</div></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2107,12 +2317,44 @@
             // Service areas toggle
             var saToggle = document.getElementById('saToggleBtn');
             var saContent = document.getElementById('saDropdownContent');
+            var saBoroughTabs = document.getElementById('saBoroughTabs');
+            var saSliderContainer = document.getElementById('saSliderContainer');
+            var currentSlide = 0;
+            var totalSlides = 5;
+
             if (saToggle && saContent) {
                 saToggle.addEventListener('click', function() {
                     if (saContent.style.maxHeight && saContent.style.maxHeight !== '0px') {
                         saContent.style.maxHeight = '0';
                     } else {
                         saContent.style.maxHeight = saContent.scrollHeight + 'px';
+                    }
+                });
+            }
+
+            function updateSlider() {
+                if (!saSliderContainer) return;
+                var slides = saSliderContainer.querySelectorAll('.sa-slide');
+                slides.forEach(function(slide, i) {
+                    slide.style.display = i === currentSlide ? 'block' : 'none';
+                });
+                if (saBoroughTabs) {
+                    var tabs = saBoroughTabs.querySelectorAll('.sa-borough-tab');
+                    tabs.forEach(function(tab, i) {
+                        tab.classList.toggle('active', i === currentSlide);
+                    });
+                }
+                // Update max-height for dropdown
+                if (saContent) {
+                    saContent.style.maxHeight = saContent.scrollHeight + 'px';
+                }
+            }
+
+            if (saBoroughTabs) {
+                saBoroughTabs.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('sa-borough-tab')) {
+                        currentSlide = parseInt(e.target.dataset.borough);
+                        updateSlider();
                     }
                 });
             }
