@@ -329,6 +329,7 @@
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            scroll-margin-top: 100px;
         }
         .service:hover {
             transform: translateY(-5px);
@@ -1198,19 +1199,22 @@
                         <div class="services-btn" id="servicesToggle">Services</div>
                         <ul class="services-dropdown" id="servicesDropdown">
                             <button class="dropdown-close-btn" id="dropdownCloseBtn">&times;</button>
-                            <li><a href="#services">Canister Vacuum Repair</a></li>
-                            <li><a href="#services">Stick Vacuum Repair</a></li>
-                            <li><a href="#services">Robot Vacuum Repair</a></li>
-                            <li><a href="#services">Upright Vacuum Repair</a></li>
-                            <li><a href="#services">Bagless Vacuum Repair</a></li>
-                            <li><a href="#services">Cordless Vacuum Repair</a></li>
+                            <li><a href="#vacuum-c3">Complete C3 Repair</a></li>
+                            <li><a href="#vacuum-c1">Classic C1 Repair</a></li>
+                            <li><a href="#vacuum-c2">Compact C2 Repair</a></li>
+                            <li><a href="#vacuum-triflex">Triflex HX1 Repair</a></li>
+                            <li><a href="#vacuum-blizzard">Blizzard CX1 Repair</a></li>
+                            <li><a href="#vacuum-scout">Scout RX3 Repair</a></li>
+                            <li><a href="#vacuum-u1">Dynamic U1 Repair</a></li>
+                            <li><a href="#vacuum-boost">Boost CX1 Repair</a></li>
+                            <li><a href="#vacuum-catdog">Cat & Dog Repair</a></li>
                             <li class="submenu-toggle" id="serviceAreasToggle">Service Areas</li>
                             <div class="service-areas-submenu" id="serviceAreasSubmenu">
-                                <li><a href="#services">Manhattan</a></li>
-                                <li><a href="#services">Brooklyn</a></li>
-                                <li><a href="#services">Queens</a></li>
-                                <li><a href="#services">Bronx</a></li>
-                                <li><a href="#services">Staten Island</a></li>
+                                <li><a href="#sa-service-areas">Manhattan</a></li>
+                                <li><a href="#sa-service-areas">Brooklyn</a></li>
+                                <li><a href="#sa-service-areas">Queens</a></li>
+                                <li><a href="#sa-service-areas">Bronx</a></li>
+                                <li><a href="#sa-service-areas">Staten Island</a></li>
                             </div>
                         </ul>
                     </div>
@@ -1318,7 +1322,7 @@
         <div class="container">
             <h2>Miele Vacuum Models We Service</h2>
             <div class="services-grid">
-                <div class="service">
+                <div class="service" id="vacuum-c3">
                     <div class="service-image"><img src="/assets/images/vacuums/complete-c3.webp" alt="Miele Complete C3 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Complete C3 Series</h3>
                     <p>Full-size canister vacuums with powerful suction. We repair motors, hoses, powerheads, and all electronic components.</p>
@@ -1352,7 +1356,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('c3')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-c1">
                     <div class="service-image"><img src="/assets/images/vacuums/classic-c1.webp" alt="Miele Classic C1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Classic C1 Series</h3>
                     <p>Compact canister vacuums perfect for smaller spaces. Expert repair for all C1 models and accessories.</p>
@@ -1383,7 +1387,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('c1')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-c2">
                     <div class="service-image"><img src="/assets/images/vacuums/compact-c2.webp" alt="Miele Compact C2 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Compact C2 Series</h3>
                     <p>Mid-size canister vacuums with excellent filtration. We service all Compact C2 variants including Electro+ and Cat & Dog.</p>
@@ -1417,7 +1421,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('c2')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-triflex">
                     <div class="service-image"><img src="/assets/images/vacuums/triflex-hx1.webp" alt="Miele Triflex HX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Triflex HX1 Series</h3>
                     <p>Cordless stick vacuums with 3-in-1 design. Battery replacement, motor repair, and full diagnostic service.</p>
@@ -1451,7 +1455,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('triflex')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-blizzard">
                     <div class="service-image"><img src="/assets/images/vacuums/blizzard-cx1.webp" alt="Miele Blizzard CX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Blizzard CX1 Series</h3>
                     <p>Bagless canister vacuums with Vortex Technology. We repair cyclone systems, filters, and all components.</p>
@@ -1485,7 +1489,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('blizzard')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-scout">
                     <div class="service-image"><img src="/assets/images/vacuums/scout-rx3.webp" alt="Miele Scout RX3 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Scout RX3 Robot</h3>
                     <p>Intelligent robot vacuums with smart navigation. Sensor repair, battery service, and software diagnostics.</p>
@@ -1519,7 +1523,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('scout')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-u1">
                     <div class="service-image"><img src="/assets/images/vacuums/upright-vacuum.webp" alt="Miele Upright Vacuum Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Dynamic U1 Uprights</h3>
                     <p>Powerful upright vacuums with swivel neck. Complete service for brushrolls, belts, motors, and filtration systems.</p>
@@ -1553,7 +1557,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('u1')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-boost">
                     <div class="service-image"><img src="/assets/images/vacuums/boost-cx1.webp" alt="Miele Boost CX1 Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Boost CX1 Series</h3>
                     <p>High-performance bagless vacuums. Expert repair for all Boost models including motor and suction issues.</p>
@@ -1587,7 +1591,7 @@
                     </div>
                     <button class="expand-btn" onclick="toggleExpand('boost')">+ Show More</button>
                 </div>
-                <div class="service">
+                <div class="service" id="vacuum-catdog">
                     <div class="service-image"><img src="/assets/images/vacuums/canister-vacuum.webp" alt="Miele Cat & Dog Vacuum Repair" width="200" height="180" loading="lazy"></div>
                     <h3>Cat & Dog Series</h3>
                     <p>Specialized pet hair vacuums with turbo brushes. Filter replacement, odor control service, and deep cleaning maintenance.</p>
