@@ -102,10 +102,13 @@
             gap: 15px;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
         }
         nav {
             display: flex;
@@ -138,7 +141,25 @@
             background: linear-gradient(135deg, var(--red) 0%, #5a0f25 100%);
             color: white;
             padding: 80px 0;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-image {
+            flex: 1;
             text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
         }
         .hero h1 {
             font-size: 2.8rem;
@@ -148,7 +169,7 @@
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 0 30px;
             opacity: 0.95;
         }
         .btn {
@@ -335,6 +356,17 @@
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+            .hero-image img {
+                max-height: 250px;
+            }
             .header-content { justify-content: center; text-align: center; }
             nav { justify-content: center; }
             .contact-info { gap: 30px; }
@@ -503,7 +535,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">Miele Vacuum Repair NYC</a>
+                <a href="/" class="logo"><img src="/assets/images/miele-logo.png" alt="Miele Vacuum Repair NYC" height="40"></a>
                 <nav>
                     <div class="nav-dropdown">
                         <a href="#services" class="nav-link">Vacuum Services</a>
@@ -532,11 +564,18 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Expert Miele Vacuum Repair in NYC</h1>
-            <p>Professional repair service for all Miele vacuum models. Complete C3, Classic C1, Triflex HX1, Blizzard CX1, Scout RX3 and more. Fast, reliable service across all five boroughs.</p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn" id="phoneRevealBtn2">Call Toll-Free</button>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Expert Miele Vacuum Repair in NYC</h1>
+                    <p>Professional repair service for all Miele vacuum models. Complete C3, Classic C1, Triflex HX1, Blizzard CX1, Scout RX3 and more. Fast, reliable service across all five boroughs.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button class="btn" id="phoneRevealBtn2">Call Toll-Free</button>
+                        <a href="#services" class="btn btn-secondary">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/assets/images/vacuums/hero-vacuum.png" alt="Miele Vacuum Professional Repair Service" width="400" height="400">
+                </div>
             </div>
         </div>
     </section>
