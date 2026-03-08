@@ -262,8 +262,35 @@
             font-size: 0.9rem;
         }
         .expandable-text.expanded {
-            max-height: 300px;
+            max-height: 250px;
             overflow-y: auto;
+            padding-right: 10px;
+        }
+        .expandable-text.expanded::-webkit-scrollbar {
+            width: 6px;
+        }
+        .expandable-text.expanded::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        .expandable-text.expanded::-webkit-scrollbar-thumb {
+            background: var(--red);
+            border-radius: 3px;
+        }
+        .expandable-text.expanded::-webkit-scrollbar-thumb:hover {
+            background: #5a0f25;
+        }
+        .expandable-text.expanded {
+            scrollbar-width: thin;
+            scrollbar-color: var(--red) #f1f1f1;
+        }
+        .expandable-text h4 {
+            color: var(--red);
+            margin: 15px 0 8px;
+            font-size: 0.95rem;
+        }
+        .expandable-text h4:first-child {
+            margin-top: 0;
         }
         .expandable-fade {
             position: absolute;
@@ -876,11 +903,20 @@
                     <p>Full-size canister vacuums with powerful suction. We repair motors, hoses, powerheads, and all electronic components.</p>
                     <div class="expandable-content" id="expand-c3">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Clogged HEPA filters, blocked hoses, worn seals, or motor issues. We diagnose and restore full suction power to your Complete C3.</p>
-                            <p><strong>Motor Repair:</strong> Strange noises, burning smell, or complete motor failure. Expert motor diagnosis and replacement with genuine Miele motors.</p>
-                            <p><strong>Powerhead Service:</strong> Brushroll not spinning, belt replacement, electrical connections. Complete powerhead and electrobrush repair.</p>
-                            <p><strong>Hose & Wand Repair:</strong> Cracked hoses, broken wands, cord retractor issues. All replacements use genuine Miele parts.</p>
-                            <p><strong>Filter Replacement:</strong> HEPA filter service, exhaust filters, and motor protection filters. We service Marin, Kona, Calima, Brilliant, and all C3 variants.</p>
+                            <h4>Complete C3 Suction Problems</h4>
+                            <p><strong>Miele Complete C3 suction repair</strong> addresses the most common issue owners face. Loss of suction can result from clogged HEPA filters, blocked hoses, worn gaskets, or motor degradation. Our NYC technicians perform comprehensive airflow diagnostics to identify restrictions throughout the sealed system. We restore factory suction levels using genuine Miele replacement parts.</p>
+
+                            <h4>Complete C3 Motor Repair</h4>
+                            <p><strong>Miele Complete C3 motor service</strong> covers strange noises, burning smells, overheating, and complete motor failure. The C3's powerful 1200W motor requires expert diagnosis. We repair motor bearings, carbon brushes, and perform complete motor replacements when necessary. All motor work includes testing under load conditions.</p>
+
+                            <h4>Powerhead & Electrobrush Service</h4>
+                            <p><strong>Miele electrobrush repair</strong> for Complete C3 models includes brushroll motor diagnosis, belt replacement, electrical connection repair, and height adjustment calibration. We service SEB 228, SEB 236, and all C3-compatible powerheads. Brushroll not spinning is often caused by belt wear or motor brush failure.</p>
+
+                            <h4>Hose, Wand & Cord Repair</h4>
+                            <p><strong>Miele hose and wand repair</strong> addresses cracks, splits, blockages, and electrical conductor damage in powered hoses. We repair cord retractor mechanisms, replace damaged wands, and restore electrical connections. Genuine Miele hoses maintain the sealed system integrity essential for HEPA filtration.</p>
+
+                            <h4>Filter System Service</h4>
+                            <p><strong>Miele HEPA filter service</strong> includes AirClean filter replacement, exhaust filter maintenance, and motor protection filter installation. We service Complete C3 Marin, Kona, Calima, Brilliant, Cat & Dog, and all specialty variants with same-day appointments throughout Manhattan, Brooklyn, Queens, Bronx, and Staten Island.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -892,11 +928,17 @@
                     <p>Compact canister vacuums perfect for smaller spaces. Expert repair for all C1 models and accessories.</p>
                     <div class="expandable-content" id="expand-c1">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Clogged filters, blocked hoses, worn seals, or motor degradation. We restore full suction power to your Classic C1.</p>
-                            <p><strong>Motor Repair:</strong> Motor diagnostics for strange noises, overheating, or failure. Expert motor replacement service.</p>
-                            <p><strong>Cable Rewind:</strong> Cord retractor repair and replacement. Fix stuck or non-retracting power cords.</p>
-                            <p><strong>Filter Maintenance:</strong> AirClean filter service, dustbag holder repair, and exhaust filter replacement.</p>
-                            <p>We service Pure Suction, Turbo Team, and Cat & Dog C1 variants throughout NYC with same-day appointments available.</p>
+                            <h4>Classic C1 Suction Restoration</h4>
+                            <p><strong>Miele Classic C1 suction repair</strong> restores full cleaning power to your compact canister vacuum. Common causes include clogged filters, blocked hoses, worn gaskets, and motor wear. Our technicians perform complete airflow testing to locate restrictions and restore factory performance levels.</p>
+
+                            <h4>Classic C1 Motor Service</h4>
+                            <p><strong>Miele Classic C1 motor repair</strong> addresses loud operation, reduced power, overheating, and motor failure. The C1's efficient motor design requires proper diagnosis of carbon brushes, bearings, and windings. We provide motor rebuilds and complete replacements using genuine Miele components.</p>
+
+                            <h4>Cable Rewind Mechanism</h4>
+                            <p><strong>Miele cord retractor repair</strong> fixes stuck cables, incomplete rewind, and broken rewind springs. The automatic cord rewind is a common failure point that we repair in-shop with genuine replacement mechanisms. This includes the retractor drum, spring assembly, and cord replacement.</p>
+
+                            <h4>Filter & Dustbag System</h4>
+                            <p><strong>Miele AirClean filter service</strong> for Classic C1 includes dustbag holder repair, filter frame replacement, exhaust filter maintenance, and seal restoration. Proper filtration is essential for the C1's allergy-friendly operation. We service Pure Suction, Turbo Team, and Cat & Dog C1 models throughout all NYC boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -908,11 +950,20 @@
                     <p>Mid-size canister vacuums with excellent filtration. We service all Compact C2 variants including Electro+ and Cat & Dog.</p>
                     <div class="expandable-content" id="expand-c2">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Suction control issues, clogged filters, or airflow blockages. Full diagnostic and repair service.</p>
-                            <p><strong>Motor Repair:</strong> Motor diagnostics, overheating issues, and complete motor replacement when needed.</p>
-                            <p><strong>Powerhead Issues:</strong> Electrobrush motor repair, belt replacement, and electrical connection service.</p>
-                            <p><strong>Hose & Wand:</strong> Telescopic wand problems, hose cracks, and wand connection repairs.</p>
-                            <p><strong>Filter Service:</strong> AirClean filter system, exhaust filter maintenance, and HEPA upgrades. We service C2 Electro+, Cat & Dog, and Hard Floor models.</p>
+                            <h4>Compact C2 Suction Issues</h4>
+                            <p><strong>Miele Compact C2 suction repair</strong> diagnoses and fixes airflow problems affecting cleaning performance. The C2's variable suction control can malfunction, or blockages may occur in the hose, wand, or filter system. We restore full suction power with comprehensive testing and genuine parts.</p>
+
+                            <h4>Compact C2 Motor Repair</h4>
+                            <p><strong>Miele Compact C2 motor service</strong> covers overheating, unusual noises, power fluctuations, and complete motor failure. The C2's mid-size motor requires expert diagnosis. We repair motor components and provide full replacements when necessary, all backed by our repair warranty.</p>
+
+                            <h4>Electrobrush & Powerhead</h4>
+                            <p><strong>Miele electrobrush repair</strong> for Compact C2 includes brushroll motor diagnosis, belt replacement, height adjustment, and electrical connection repair. We service the SEB 217, SEB 228, and turbo attachments. Powerhead issues often stem from worn belts or motor brush failure.</p>
+
+                            <h4>Telescopic Wand & Hose</h4>
+                            <p><strong>Miele telescopic wand repair</strong> addresses stuck extension mechanisms, cracked tubes, and lock button failures. We also repair hose cracks, blockages, and electrical conductor damage in powered hoses. All replacements maintain the sealed system integrity.</p>
+
+                            <h4>AirClean Filtration Service</h4>
+                            <p><strong>Miele AirClean filter system</strong> maintenance includes HEPA filter replacement, exhaust filter service, and motor protection filters. We service Compact C2 Electro+, Cat & Dog, Hard Floor, and all specialty variants with fast turnaround throughout NYC.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -924,11 +975,20 @@
                     <p>Cordless stick vacuums with 3-in-1 design. Battery replacement, motor repair, and full diagnostic service.</p>
                     <div class="expandable-content" id="expand-triflex">
                         <div class="expandable-text">
-                            <p><strong>Battery Service:</strong> Battery replacement and reconditioning for cordless operation. Restore full runtime to your Triflex.</p>
-                            <p><strong>Loss of Suction:</strong> Suction power loss diagnosis, airflow optimization, and dust container seal repair.</p>
-                            <p><strong>Motor Repair:</strong> Brushroll motor failure, main motor issues, and complete motor replacement.</p>
-                            <p><strong>Powerhead Issues:</strong> Brushroll replacement, belt service, and electrobrush motor repair.</p>
-                            <p><strong>Filter Replacement:</strong> HEPA filter service and dust container maintenance. We service all Triflex Pro, Cat & Dog, and Runner models.</p>
+                            <h4>Triflex Battery Service</h4>
+                            <p><strong>Miele Triflex battery replacement</strong> restores full cordless runtime to your stick vacuum. Li-ion battery packs degrade over time, reducing runtime from the original 60 minutes. We replace batteries with genuine Miele cells and calibrate the charging system for optimal performance.</p>
+
+                            <h4>Triflex Suction Problems</h4>
+                            <p><strong>Miele Triflex suction repair</strong> addresses power loss, weak pickup, and airflow restrictions. Common causes include clogged filters, dust container seal wear, and motor issues. We perform complete airflow diagnostics and restore factory suction levels.</p>
+
+                            <h4>Triflex Motor Repair</h4>
+                            <p><strong>Miele Triflex motor service</strong> covers the main suction motor and brushroll motor. Symptoms include reduced power, unusual noises, and intermittent operation. We diagnose motor electronics, replace worn components, and perform complete motor swaps when needed.</p>
+
+                            <h4>Brushroll & Powerhead</h4>
+                            <p><strong>Miele Triflex brushroll service</strong> includes belt replacement, motor brush repair, and complete electrobrush restoration. The Triflex's direct-drive brushroll requires proper maintenance for optimal carpet and hard floor cleaning performance.</p>
+
+                            <h4>Filter & Dust Container</h4>
+                            <p><strong>Miele Triflex filter replacement</strong> and dust container maintenance keeps your cordless vacuum operating efficiently. We service HEPA filters, pre-motor filters, and repair dust container mechanisms. Expert service for Triflex HX1 Pro, Cat & Dog, Runner, and all configurations throughout NYC.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -940,11 +1000,20 @@
                     <p>Bagless canister vacuums with Vortex Technology. We repair cyclone systems, filters, and all components.</p>
                     <div class="expandable-content" id="expand-blizzard">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Vortex cyclone system cleaning, suction power optimization, and airflow restoration.</p>
-                            <p><strong>Motor Repair:</strong> Motor protection issues, overheating diagnosis, and motor replacement service.</p>
-                            <p><strong>Powerhead Issues:</strong> Powerhead connectivity, brushroll service, and electrical connection repair.</p>
-                            <p><strong>Filter Replacement:</strong> Gore CleanStream filter service, self-cleaning filter maintenance, and Hygiene Lifetime filter care.</p>
-                            <p><strong>Dust Container:</strong> Release mechanism repair, seal replacement, and emptying system service. Expert service for Excellence, Cat & Dog, and Turbo Team models.</p>
+                            <h4>Blizzard Vortex Technology</h4>
+                            <p><strong>Miele Blizzard CX1 cyclone repair</strong> services the unique Vortex Technology that provides bagless operation. We clean and restore cyclone separators, repair airflow chambers, and optimize the multi-stage filtration system for maximum suction and dust separation.</p>
+
+                            <h4>Blizzard Motor Service</h4>
+                            <p><strong>Miele Blizzard motor repair</strong> addresses overheating, power loss, unusual noises, and motor protection system alerts. The Blizzard's powerful motor requires expert diagnosis of thermal cutouts, carbon brushes, and motor windings. We provide complete motor replacement service.</p>
+
+                            <h4>Powerhead & Electrobrush</h4>
+                            <p><strong>Miele Blizzard powerhead repair</strong> includes brushroll motor service, belt replacement, electrical connectivity, and height adjustment calibration. We service the SEB 228, SEB 236, and turbo attachments compatible with Blizzard models.</p>
+
+                            <h4>Gore CleanStream Filter</h4>
+                            <p><strong>Miele Gore CleanStream filter service</strong> maintains the self-cleaning filter system unique to Blizzard vacuums. We repair the automatic filter cleaning mechanism, replace damaged filters, and service the Hygiene Lifetime filter for optimal air quality.</p>
+
+                            <h4>Dust Container System</h4>
+                            <p><strong>Miele Blizzard dust container repair</strong> covers release mechanism failures, seal degradation, and emptying system problems. The bagless design requires proper sealing for hygienic operation. We service Excellence, Cat & Dog, and Turbo Team Blizzard models throughout NYC.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -956,11 +1025,20 @@
                     <p>Intelligent robot vacuums with smart navigation. Sensor repair, battery service, and software diagnostics.</p>
                     <div class="expandable-content" id="expand-scout">
                         <div class="expandable-text">
-                            <p><strong>Battery Service:</strong> Battery replacement and charging contact cleaning. Restore full runtime to your Scout robot.</p>
-                            <p><strong>Loss of Suction:</strong> Suction motor service, dustbin seal repair, and airflow optimization.</p>
-                            <p><strong>Motor Repair:</strong> Main drive motor, suction motor, and brushroll motor diagnostics and replacement.</p>
-                            <p><strong>Sensor Service:</strong> Navigation sensor calibration, cliff sensor repair, and obstacle detection fixes.</p>
-                            <p><strong>Connectivity:</strong> WiFi issues, app pairing problems, and software diagnostics. We service Scout RX3 Home Vision and all Scout generations.</p>
+                            <h4>Scout Battery Replacement</h4>
+                            <p><strong>Miele Scout RX3 battery service</strong> restores full autonomous runtime to your robot vacuum. Li-ion battery degradation reduces cleaning cycles over time. We replace battery packs, clean charging contacts, and ensure proper communication with the charging dock.</p>
+
+                            <h4>Scout Suction System</h4>
+                            <p><strong>Miele Scout suction repair</strong> addresses weak pickup and dust collection issues. We service the suction motor, repair dustbin seals, and optimize airflow through the compact filtration system for thorough autonomous cleaning.</p>
+
+                            <h4>Scout Motor Diagnostics</h4>
+                            <p><strong>Miele Scout motor service</strong> covers drive motors, suction motor, and brushroll motor. Robot vacuums require precise motor function for navigation and cleaning. We diagnose motor electronics and replace worn components to restore full operation.</p>
+
+                            <h4>Navigation & Sensors</h4>
+                            <p><strong>Miele Scout sensor calibration</strong> fixes navigation errors, cliff sensor malfunctions, and obstacle detection problems. The Scout's intelligent navigation relies on multiple sensors that require precise calibration for efficient room mapping and cleaning patterns.</p>
+
+                            <h4>WiFi & App Connectivity</h4>
+                            <p><strong>Miele Scout connectivity repair</strong> resolves WiFi pairing issues, app communication problems, and firmware update failures. We diagnose network modules, reset connectivity systems, and restore smart home integration. Expert service for Scout RX3 Home Vision and all Scout generations in NYC.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -972,11 +1050,20 @@
                     <p>Powerful upright vacuums with swivel neck. Complete service for brushrolls, belts, motors, and filtration systems.</p>
                     <div class="expandable-content" id="expand-u1">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Sealed system restoration, clogged filters, and airflow blockage diagnosis.</p>
-                            <p><strong>Motor Repair:</strong> Main motor and brushroll motor replacement. Strange noises and overheating fixes.</p>
-                            <p><strong>Powerhead Issues:</strong> Belt replacement, brushroll service, height adjustment repair, and headlight replacement.</p>
-                            <p><strong>Hose & Wand:</strong> Handle lock repair, swivel neck mechanism, and wand connection service.</p>
-                            <p><strong>Filter Replacement:</strong> HEPA filter service, bag change indicator repair, and exhaust filter maintenance. We service AutoEco, Cat & Dog, Jazz, Twist, and HomeCare U1 models.</p>
+                            <h4>Dynamic U1 Suction Repair</h4>
+                            <p><strong>Miele Dynamic U1 suction service</strong> restores full cleaning power to your upright vacuum. The U1's sealed system requires proper airflow through filters, bags, and attachments. We diagnose restrictions and restore factory suction levels with genuine Miele components.</p>
+
+                            <h4>Dynamic U1 Motor Service</h4>
+                            <p><strong>Miele Dynamic U1 motor repair</strong> covers the main suction motor and brushroll motor. Symptoms include unusual noises, overheating, reduced power, and complete motor failure. We diagnose motor bearings, carbon brushes, and provide complete motor replacement.</p>
+
+                            <h4>Brushroll & Belt Service</h4>
+                            <p><strong>Miele U1 brushroll repair</strong> includes belt replacement, brushroll motor service, height adjustment calibration, and headlight replacement. The swivel neck design requires proper alignment for effective carpet agitation and edge cleaning.</p>
+
+                            <h4>Handle & Swivel Mechanism</h4>
+                            <p><strong>Miele U1 handle repair</strong> addresses lock mechanism failures, swivel neck problems, and wand connection issues. The Dynamic U1's maneuverability depends on proper swivel function. We repair and replace handle components for smooth operation.</p>
+
+                            <h4>Filtration System</h4>
+                            <p><strong>Miele U1 filter replacement</strong> includes HEPA filter service, bag change indicator repair, exhaust filter maintenance, and motor protection filter installation. We service Dynamic U1 AutoEco, Cat & Dog, Jazz, Twist, and HomeCare models throughout all NYC boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -988,11 +1075,20 @@
                     <p>High-performance bagless vacuums. Expert repair for all Boost models including motor and suction issues.</p>
                     <div class="expandable-content" id="expand-boost">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Mono-cyclone technology service, suction power optimization, and airflow restoration.</p>
-                            <p><strong>Motor Repair:</strong> Motor diagnostics, overheating issues, and complete motor replacement service.</p>
-                            <p><strong>Powerhead Issues:</strong> Powerhead connectivity, brushroll motor service, and belt replacement.</p>
-                            <p><strong>Filter Replacement:</strong> Fine dust filter replacement, self-cleaning filter mechanism repair, and Hygiene Lifetime filter service.</p>
-                            <p><strong>Dust Container:</strong> Emptying mechanism repair, seal replacement, and release button fixes. All repairs use genuine Miele parts.</p>
+                            <h4>Boost CX1 Cyclone System</h4>
+                            <p><strong>Miele Boost CX1 cyclone repair</strong> services the mono-cyclone technology for optimal bagless performance. We clean cyclone chambers, restore airflow efficiency, and optimize the separation system for maximum dust collection without suction loss.</p>
+
+                            <h4>Boost Motor Service</h4>
+                            <p><strong>Miele Boost motor repair</strong> addresses overheating, power fluctuations, unusual noises, and motor failure. The high-performance motor requires expert diagnosis of thermal systems, carbon brushes, and motor windings. We provide complete motor replacement service.</p>
+
+                            <h4>Powerhead Repair</h4>
+                            <p><strong>Miele Boost powerhead service</strong> includes brushroll motor repair, belt replacement, electrical connectivity, and height adjustment calibration. We service all Boost-compatible electrobrush and turbo attachments for carpet and hard floor cleaning.</p>
+
+                            <h4>Self-Cleaning Filter System</h4>
+                            <p><strong>Miele Boost filter service</strong> maintains the self-cleaning filter mechanism and Hygiene Lifetime filter. We repair the automatic cleaning system, replace fine dust filters, and ensure optimal air quality and suction performance.</p>
+
+                            <h4>Dust Container Service</h4>
+                            <p><strong>Miele Boost dust container repair</strong> covers release button failures, seal degradation, and emptying mechanism problems. Proper sealing is essential for hygienic bagless operation. All repairs use genuine Miele replacement parts with warranty coverage.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1004,11 +1100,20 @@
                     <p>Specialized pet hair vacuums with turbo brushes. Filter replacement, odor control service, and deep cleaning maintenance.</p>
                     <div class="expandable-content" id="expand-catdog">
                         <div class="expandable-text">
-                            <p><strong>Loss of Suction:</strong> Pet hair clog removal, suction optimization for pet homes, and airflow restoration.</p>
-                            <p><strong>Motor Repair:</strong> Turbobrush motor service, main motor diagnostics, and motor replacement for heavy pet hair use.</p>
-                            <p><strong>Powerhead Issues:</strong> Electrobrush restoration, belt replacement, and brushroll service for pet hair pickup.</p>
-                            <p><strong>Filter Replacement:</strong> Active AirClean filter replacement, charcoal odor filter service, and HEPA filter maintenance.</p>
-                            <p><strong>Odor Control:</strong> Charcoal filter replacement and deep cleaning service. We service all Cat & Dog models across Complete, Compact, Classic, and Blizzard lines.</p>
+                            <h4>Pet Hair Suction Issues</h4>
+                            <p><strong>Miele Cat & Dog suction repair</strong> addresses the unique challenges of pet homes. Pet hair wraps around brushrolls, clogs filters faster, and accumulates in hoses. We remove blockages, restore airflow, and optimize suction for heavy pet hair pickup.</p>
+
+                            <h4>Cat & Dog Motor Service</h4>
+                            <p><strong>Miele Cat & Dog motor repair</strong> handles the extra demands of pet hair vacuuming. Frequent use causes accelerated motor wear. We diagnose turbobrush motors, main suction motors, and provide replacements designed for demanding pet home cleaning.</p>
+
+                            <h4>Turbobrush & Electrobrush</h4>
+                            <p><strong>Miele turbobrush repair</strong> for Cat & Dog models includes belt replacement, brushroll restoration, and motor service. Pet hair tangles require regular maintenance. We restore full agitation for effective pet hair removal from carpets and upholstery.</p>
+
+                            <h4>Active AirClean Filtration</h4>
+                            <p><strong>Miele Active AirClean filter service</strong> maintains the advanced filtration that captures pet allergens and dander. We replace HEPA filters, service motor protection filters, and ensure the sealed system contains pet allergens effectively.</p>
+
+                            <h4>Odor Control System</h4>
+                            <p><strong>Miele charcoal filter service</strong> eliminates pet odors during vacuuming. The Active AirClean charcoal filter neutralizes odors before exhaust. We replace charcoal filters and perform deep cleaning service for all Cat & Dog models across Complete, Compact, Classic, and Blizzard lines throughout NYC.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
