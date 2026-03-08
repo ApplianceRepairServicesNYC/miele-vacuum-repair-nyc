@@ -672,9 +672,72 @@
             .hero-image img {
                 max-height: 250px;
             }
-            .header-content { justify-content: center; text-align: center; }
+            .header-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-right {
+                justify-content: center;
+            }
             nav { justify-content: center; }
             .contact-info { gap: 30px; }
+        }
+        /* Reviews Modal */
+        .modal-card {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            z-index: 10000;
+            max-width: 700px;
+            width: 95%;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+        }
+        .modal-card.active {
+            display: block;
+        }
+        .modal-header {
+            background: linear-gradient(135deg, var(--red) 0%, #5a0f25 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h2 {
+            margin: 0;
+            font-size: 22px;
+            color: white;
+        }
+        .modal-card .modal-close {
+            position: static;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .modal-card .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+        .modal-card .modal-content {
+            padding: 30px;
+            overflow-y: auto;
+            max-height: calc(90vh - 80px);
         }
         /* Trust Badges */
         .trust-section {
@@ -849,7 +912,7 @@
                     <p>Professional repair service for all Miele vacuum models. Complete C3, Classic C1, Triflex HX1, Blizzard CX1, Scout RX3 and more. Fast, reliable service across all five boroughs.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <button class="btn" id="phoneRevealBtn2">Call Toll-Free</button>
-                        <a href="#services" class="btn btn-secondary">Our Services</a>
+                        <button class="btn btn-secondary modal-trigger" data-modal="reviewsModal">★ Read Reviews</button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -959,6 +1022,15 @@
 
                             <h4>Filter System Service</h4>
                             <p><strong>Miele HEPA filter service</strong> includes AirClean filter replacement, exhaust filter maintenance, and motor protection filter installation. We service Complete C3 Marin, Kona, Calima, Brilliant, Cat & Dog, and all specialty variants with same-day appointments throughout Manhattan, Brooklyn, Queens, Bronx, and Staten Island.</p>
+
+                            <h4>Typical Complete C3 Issues</h4>
+                            <p>The most frequently reported Complete C3 problems include intermittent power cycling caused by overheating sensors, dustbag indicator malfunctions showing full when empty, telescopic wand lock failures preventing proper extension, wheel assembly wear causing difficulty maneuvering, and cord retractor jamming mid-rewind. Our technicians encounter these issues daily and have developed efficient diagnostic protocols to identify root causes quickly.</p>
+
+                            <h4>Complete C3 Maintenance Schedule</h4>
+                            <p><strong>Monthly maintenance</strong> should include inspecting the dustbag compartment seal, cleaning the exhaust filter housing, checking the hose for cracks or blockages, and examining the brushroll for wrapped hair or debris. <strong>Quarterly maintenance</strong> requires replacing the dustbag even if not full, cleaning the motor protection filter, inspecting electrical connections at the wand and hose junction, and lubricating wheel axles. <strong>Annual professional service</strong> should include motor inspection, complete airflow testing, gasket replacement as needed, and electronic component diagnostics.</p>
+
+                            <h4>Complete C3 Repair Solutions</h4>
+                            <p>For suction loss issues, we systematically check the sealed airpath from floor tool to exhaust, testing each junction for air leaks. Motor overheating typically requires thermal cutout reset and cleaning of motor cooling vents. Power cord issues may need complete retractor mechanism replacement rather than simple cord repair. Dustbag recognition failures often stem from sensor contamination or magnet degradation in the bag collar. Our NYC repair facility stocks all Complete C3 components for rapid turnaround, and our mobile technicians carry the most common replacement parts for on-site repairs across all five boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -981,6 +1053,15 @@
 
                             <h4>Filter & Dustbag System</h4>
                             <p><strong>Miele AirClean filter service</strong> for Classic C1 includes dustbag holder repair, filter frame replacement, exhaust filter maintenance, and seal restoration. Proper filtration is essential for the C1's allergy-friendly operation. We service Pure Suction, Turbo Team, and Cat & Dog C1 models throughout all NYC boroughs.</p>
+
+                            <h4>Typical Classic C1 Issues</h4>
+                            <p>Common Classic C1 problems we repair include suction dial malfunctions where power settings become unresponsive, parking clips breaking from repeated use, hose swivel joint wear causing air leaks, floor tool height adjustment failure, and the power switch developing intermittent contact issues. The C1's compact design means components are closely integrated, requiring experienced technicians to access and repair without damaging adjacent parts.</p>
+
+                            <h4>Classic C1 Maintenance Guide</h4>
+                            <p><strong>Weekly maintenance</strong> involves emptying the dustbag when two-thirds full to maintain suction, wiping down exterior surfaces, and checking the floor tool for obstructions. <strong>Monthly tasks</strong> include inspecting the hose connection points for wear, cleaning around the motor protection filter compartment, and checking the cord for fraying near the strain relief. <strong>Every six months</strong>, replace exhaust and motor protection filters, inspect wheel function, examine all gaskets for compression or damage, and test all suction settings for proper operation.</p>
+
+                            <h4>Classic C1 Repair Solutions</h4>
+                            <p>Suction loss in Classic C1 vacuums often originates from worn gaskets at the dustbag compartment or motor housing seal degradation. We perform leak testing using smoke or pressure differentials to isolate the exact failure point. Motor noise issues typically indicate bearing wear, which we address with precision bearing replacement rather than full motor swap when possible. Cord retractor problems require complete mechanism replacement since internal spring repair is not feasible. Our technicians carry C1-specific parts including dustbag holders, filter frames, hose assemblies, and motor brushes for efficient same-day repairs throughout Manhattan and all NYC boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1006,6 +1087,15 @@
 
                             <h4>AirClean Filtration Service</h4>
                             <p><strong>Miele AirClean filter system</strong> maintenance includes HEPA filter replacement, exhaust filter service, and motor protection filters. We service Compact C2 Electro+, Cat & Dog, Hard Floor, and all specialty variants with fast turnaround throughout NYC.</p>
+
+                            <h4>Typical Compact C2 Issues</h4>
+                            <p>Frequent Compact C2 repair requests involve the variable power rotary switch becoming stiff or skipping settings, the electrobrush connection losing electrical contact intermittently, carry handle cracking under stress, dustbag compartment lid latch failure, and the foot-operated on/off switch requiring excessive pressure. The C2's balance of size and power creates unique stress points that our technicians understand from years of specialized Miele service experience.</p>
+
+                            <h4>Compact C2 Maintenance Protocol</h4>
+                            <p><strong>After each use</strong>, check the dustbag level indicator and empty when approaching full. <strong>Bi-weekly</strong>, inspect the brushroll for wrapped threads, hair, or debris that reduces agitation effectiveness. <strong>Monthly</strong>, examine the telescopic wand lock buttons for proper engagement, clean the exhaust filter housing, and check all connection points for wear. <strong>Quarterly</strong>, replace the dustbag regardless of fill level to ensure optimal suction, inspect the power cord for damage, and test electrobrush operation on both carpet and hard floor settings.</p>
+
+                            <h4>Compact C2 Repair Solutions</h4>
+                            <p>Electrobrush connectivity problems in Compact C2 models usually stem from worn contact pins at the wand or hose junction, requiring contact cleaning or pin replacement. Power switch issues respond well to contact cleaner application, but severe cases need switch module replacement. Suction irregularities often trace to the variable power control potentiometer, which we can clean or replace depending on wear severity. The telescopic wand lock mechanism failures require complete wand replacement since internal repair is impractical. Our NYC service center maintains full Compact C2 parts inventory including Electro+, Hard Floor, and Cat & Dog variant-specific components for same-day service.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1031,6 +1121,15 @@
 
                             <h4>Filter & Dust Container</h4>
                             <p><strong>Miele Triflex filter replacement</strong> and dust container maintenance keeps your cordless vacuum operating efficiently. We service HEPA filters, pre-motor filters, and repair dust container mechanisms. Expert service for Triflex HX1 Pro, Cat & Dog, Runner, and all configurations throughout NYC.</p>
+
+                            <h4>Typical Triflex HX1 Issues</h4>
+                            <p>Common Triflex problems include battery not holding charge beyond 15-20 minutes indicating cell degradation, the vacuum cutting out mid-use due to thermal protection activation, configuration lock buttons wearing and failing to secure the three modes properly, charging dock LED indicators malfunctioning, and the brushroll stopping intermittently during operation. The Triflex's innovative 3-in-1 design creates additional connection points that require specialized diagnostic knowledge.</p>
+
+                            <h4>Triflex HX1 Maintenance Schedule</h4>
+                            <p><strong>After each use</strong>, empty the dust container to prevent filter clogging and maintain suction. <strong>Weekly</strong>, remove and clean the brushroll, removing hair wraps and debris that cause motor strain. <strong>Bi-weekly</strong>, rinse the pre-motor filter under running water and allow 24 hours to fully dry before reinstalling. <strong>Monthly</strong>, wipe charging contacts with a dry cloth, inspect configuration locking mechanisms for wear, and check battery contacts for oxidation. <strong>Every 3-4 months</strong>, deep clean the dust container and cyclone assembly, inspect hose attachments for cracks, and verify all three configurations lock securely.</p>
+
+                            <h4>Triflex HX1 Repair Solutions</h4>
+                            <p>Battery degradation requires genuine Miele replacement cells with proper calibration to the charging system for accurate runtime indication. Thermal cutout activation typically indicates blocked airflow or motor stress from brushroll obstruction, addressed by cleaning airpath and servicing the brushroll assembly. Configuration lock failures require replacement of the locking mechanism components since plastic fatigue cannot be reversed. Charging problems may involve dock electronics, vacuum charging contacts, or battery management system issues requiring diagnostic testing. Our technicians perform comprehensive Triflex diagnostics including battery cell testing, motor current draw analysis, and electronic system verification for all HX1 variants throughout New York City.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1056,6 +1155,15 @@
 
                             <h4>Dust Container System</h4>
                             <p><strong>Miele Blizzard dust container repair</strong> covers release mechanism failures, seal degradation, and emptying system problems. The bagless design requires proper sealing for hygienic operation. We service Excellence, Cat & Dog, and Turbo Team Blizzard models throughout NYC.</p>
+
+                            <h4>Typical Blizzard CX1 Issues</h4>
+                            <p>Frequently reported Blizzard CX1 problems include the ComfortClean self-cleaning filter mechanism becoming jammed or ineffective, dust container release button sticking or failing to disengage properly, fine dust bypassing the cyclone system due to worn seals, wheel assembly squeaking from debris infiltration, and the Hygiene Lifetime filter indicator triggering prematurely. The bagless system's complexity requires technicians who understand Miele's Vortex Technology design principles.</p>
+
+                            <h4>Blizzard CX1 Maintenance Guide</h4>
+                            <p><strong>After each use</strong>, press the ComfortClean button to activate the self-cleaning filter function while holding over a trash receptacle. <strong>Weekly</strong>, empty the dust container even if not full to prevent fine dust compaction, wipe the cyclone chamber with a dry cloth, and inspect the container seal for debris or damage. <strong>Bi-weekly</strong>, clean the brushroll thoroughly, inspect the hose interior for blockages, and check powerhead height adjustment. <strong>Monthly</strong>, inspect all gaskets at the dust container junction, clean around the motor intake area, and verify the ComfortClean mechanism operates freely without binding.</p>
+
+                            <h4>Blizzard CX1 Repair Solutions</h4>
+                            <p>ComfortClean mechanism failures typically involve debris jamming the filter cleaning components, which we resolve through disassembly, thorough cleaning, and lubrication of moving parts. Dust bypass issues indicate cyclone chamber seal wear or Gore CleanStream filter damage requiring seal replacement or filter restoration. Container release button problems often stem from spring fatigue or button housing cracks. The Hygiene Lifetime filter should be replaced every three years despite its name, and premature indicator warnings often indicate the filter sensor requires recalibration. Our repair center provides complete Blizzard CX1 service including cyclone restoration, motor service, and all specialty configurations including Excellence, Cat & Dog, and Comfort models throughout Manhattan, Brooklyn, Queens, Bronx, and Staten Island.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1081,6 +1189,15 @@
 
                             <h4>WiFi & App Connectivity</h4>
                             <p><strong>Miele Scout connectivity repair</strong> resolves WiFi pairing issues, app communication problems, and firmware update failures. We diagnose network modules, reset connectivity systems, and restore smart home integration. Expert service for Scout RX3 Home Vision and all Scout generations in NYC.</p>
+
+                            <h4>Typical Scout RX3 Issues</h4>
+                            <p>Common Scout RX3 repair requests include the robot failing to return to the charging dock requiring manual intervention, navigation confusion where the robot repeatedly cleans the same area while ignoring others, cliff sensors triggering on dark carpets causing the robot to avoid safe areas, side brush motors failing or brushes wearing rapidly, and the dustbin full indicator activating when the bin is empty. Robot vacuum repairs require expertise in both mechanical systems and electronic diagnostics.</p>
+
+                            <h4>Scout RX3 Maintenance Schedule</h4>
+                            <p><strong>After each cleaning cycle</strong>, empty the dustbin to maintain suction and prevent motor strain. <strong>Weekly</strong>, remove and clean the main brushroll, clear debris from side brushes, and wipe all sensors with a microfiber cloth including cliff sensors on the bottom and obstacle detection sensors. <strong>Bi-weekly</strong>, clean the filter under running water and allow complete drying before reinstalling, inspect wheels for hair tangles and remove debris. <strong>Monthly</strong>, check charging contacts on both the robot and dock for oxidation, inspect the dustbin seal, and verify firmware is current through the Miele app.</p>
+
+                            <h4>Scout RX3 Repair Solutions</h4>
+                            <p>Dock return failures typically involve dirty charging contacts, weak battery unable to provide homing power, or navigation sensor calibration drift requiring recalibration procedures. Navigation issues often respond to cliff sensor cleaning, but persistent problems may indicate sensor failure requiring replacement. Dark carpet avoidance requires cliff sensor sensitivity adjustment, which our technicians perform using Miele diagnostic tools. Side brush motor failures require complete module replacement since these integrated units cannot be field-repaired. Dustbin indicator problems usually stem from contaminated optical sensors, addressed through careful cleaning and realignment. We provide comprehensive Scout RX3 service including battery replacement, wheel motor service, main board diagnostics, and camera system repair for Home Vision models throughout all five NYC boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1106,6 +1223,15 @@
 
                             <h4>Filtration System</h4>
                             <p><strong>Miele U1 filter replacement</strong> includes HEPA filter service, bag change indicator repair, exhaust filter maintenance, and motor protection filter installation. We service Dynamic U1 AutoEco, Cat & Dog, Jazz, Twist, and HomeCare models throughout all NYC boroughs.</p>
+
+                            <h4>Typical Dynamic U1 Issues</h4>
+                            <p>Frequently encountered Dynamic U1 problems include the swivel steering mechanism becoming stiff or grinding during use, the headlight burning out or flickering intermittently, the bag change indicator displaying incorrectly, belt slippage causing reduced brushroll agitation, and the handle release mechanism failing to lock in upright or reclined positions. Upright vacuums experience different stress patterns than canisters, with handle and swivel mechanisms taking significant wear.</p>
+
+                            <h4>Dynamic U1 Maintenance Protocol</h4>
+                            <p><strong>After each use</strong>, inspect the brushroll for visible debris wraps and check the bag indicator. <strong>Weekly</strong>, remove the brushroll and clear all wrapped hair, threads, and fibers that reduce agitation and strain the belt and motor. <strong>Bi-weekly</strong>, check belt tension by pressing on the brushroll through the belt viewing window, inspect headlight function, and verify the swivel mechanism moves freely. <strong>Monthly</strong>, replace the dustbag when two-thirds full regardless of indicator, inspect the exhaust filter for discoloration, examine the power cord for damage, and check floor tool height adjustment through all positions.</p>
+
+                            <h4>Dynamic U1 Repair Solutions</h4>
+                            <p>Swivel steering problems require disassembly and lubrication of the pivot bearings, or complete swivel assembly replacement if plastic components have cracked. Headlight issues may involve bulb replacement, socket repair, or wiring harness service depending on the failure mode. Bag indicator malfunctions typically stem from airflow sensor contamination or electronic control board issues. Belt replacement is straightforward but must use genuine Miele belts to maintain proper tension and heat resistance. Handle lock mechanism failures require release lever and spring replacement. Our technicians service all Dynamic U1 models including AutoEco with automatic carpet sensing, Cat & Dog with enhanced filtration, Jazz and Twist with color variations, and HomeCare with extended warranty options, providing same-day service throughout Manhattan and all NYC boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1131,6 +1257,15 @@
 
                             <h4>Dust Container Service</h4>
                             <p><strong>Miele Boost dust container repair</strong> covers release button failures, seal degradation, and emptying mechanism problems. Proper sealing is essential for hygienic bagless operation. All repairs use genuine Miele replacement parts with warranty coverage.</p>
+
+                            <h4>Typical Boost CX1 Issues</h4>
+                            <p>Common Boost CX1 problems include the mono-cyclone separator losing efficiency with fine dust passage to the filter, the dust container release button becoming difficult to press, the telescopic wand connection developing play and wobble, suction power dropping significantly between emptying cycles, and the foot pedal on/off switch requiring multiple presses. The Boost's compact bagless design concentrates these stress points in a smaller package than the Blizzard.</p>
+
+                            <h4>Boost CX1 Maintenance Schedule</h4>
+                            <p><strong>After each use</strong>, empty the dust container completely, tapping gently to dislodge compacted fine dust from the cyclone chamber. <strong>Weekly</strong>, wipe the cyclone separator with a dry microfiber cloth, inspect the fine dust filter for clogging, and check the container seal for debris. <strong>Bi-weekly</strong>, clean the brushroll, inspect hose connections for air leaks, and verify suction remains consistent from start to finish of container capacity. <strong>Monthly</strong>, deep clean the entire dust container assembly including cyclone chamber with lukewarm water, allow complete drying, inspect motor intake for fine dust accumulation, and test all accessories for proper function.</p>
+
+                            <h4>Boost CX1 Repair Solutions</h4>
+                            <p>Cyclone efficiency loss often indicates worn or damaged separator components that allow dust to bypass directly to the filter, requiring separator inspection and replacement. Container release button issues stem from spring fatigue or latch mechanism wear, both addressed through component replacement. Wand connection wobble indicates worn locking pins or socket wear, requiring either pin replacement or socket component service. Suction drops during use typically indicate filter clogging from fine dust or seal degradation allowing air bypass. Power switch issues usually respond to contact cleaning, but severe wear requires switch module replacement. Our NYC repair facility provides complete Boost CX1 service including cyclone restoration, motor diagnostics, and electronic controls, with same-day availability for all five boroughs.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1156,6 +1291,15 @@
 
                             <h4>Odor Control System</h4>
                             <p><strong>Miele charcoal filter service</strong> eliminates pet odors during vacuuming. The Active AirClean charcoal filter neutralizes odors before exhaust. We replace charcoal filters and perform deep cleaning service for all Cat & Dog models across Complete, Compact, Classic, and Blizzard lines throughout NYC.</p>
+
+                            <h4>Typical Cat & Dog Issues</h4>
+                            <p>Common Cat & Dog model problems include accelerated turbobrush wear from constant pet hair collection, clogged hoses from accumulated fur, the charcoal filter becoming saturated faster than expected, dustbag fill sensors triggering prematurely due to dense pet hair compaction, and motor overheating from restricted airflow caused by fur accumulation in the sealed system. Pet owners face unique maintenance challenges that require proactive attention and specialized service.</p>
+
+                            <h4>Cat & Dog Maintenance Requirements</h4>
+                            <p><strong>After each pet area cleaning session</strong>, check the turbobrush for hair wraps and remove immediately to prevent belt damage and motor strain. <strong>Every 2-3 uses</strong>, inspect the hose interior for fur accumulation using a long brush or by looking through with a flashlight. <strong>Weekly</strong>, replace or clean filters more frequently than standard models recommend since pet dander clogs filtration faster. <strong>Bi-weekly</strong>, empty and inspect the dustbag compartment for escaped pet hair, clean the motor protection filter area, and verify the charcoal Active AirClean filter remains effective. <strong>Monthly</strong>, deep clean the entire floor tool assembly, inspect all gaskets for hair infiltration, and test suction performance against baseline.</p>
+
+                            <h4>Cat & Dog Repair Solutions</h4>
+                            <p>Turbobrush repairs for Cat & Dog models require frequent belt replacement since pet hair creates additional friction and heat, and brushroll bearings may need service from accumulated hair ingress. Hose blockages respond to specialized cleaning tools that extract compacted fur without damaging the hose interior. Charcoal filter saturation indicates time for replacement typically every 6-12 months in active pet homes rather than the 12-month standard interval. Motor overheating in pet homes usually results from cumulative fine hair accumulation in the motor cooling system, requiring motor compartment cleaning and airflow path restoration. Our technicians specialize in Cat & Dog variants across all Miele lines including Complete C3 Cat & Dog, Compact C2 Cat & Dog, Classic C1 Cat & Dog, Blizzard CX1 Cat & Dog, and Dynamic U1 Cat & Dog, providing comprehensive pet-focused vacuum service throughout Manhattan, Brooklyn, Queens, Bronx, and Staten Island.</p>
                         </div>
                         <div class="expandable-fade"></div>
                     </div>
@@ -1328,6 +1472,65 @@
         </div>
     </div>
 
+    <!-- Reviews Modal -->
+    <div class="modal-card" id="reviewsModal">
+        <div class="modal-header">
+            <h2>Customer Reviews</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div id="elfsightContainer">
+                <div class="elfsight-app-reviews" data-elfsight-app-lazy></div>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+                <button id="writeReviewBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across NYC!</p>
+                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Call Toll-Free</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Write Review Modal -->
+    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Write a Review</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form id="reviewForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRating" value="0">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
+                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+            </form>
+            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+                <p style="color: #666; font-size: 16px;">Your review will be posted within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Phone reveal functionality
@@ -1455,6 +1658,103 @@
                 });
                 footerOverlay.classList.remove('active');
             });
+
+            // Reviews modal functionality
+            document.querySelectorAll('.modal-trigger').forEach(function(trigger) {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var modalId = this.getAttribute('data-modal');
+                    var targetModal = document.getElementById(modalId);
+                    if (targetModal) {
+                        modalOverlay.classList.add('active');
+                        targetModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal-card modals
+            document.querySelectorAll('.modal-card .modal-close').forEach(function(closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    this.closest('.modal-card').classList.remove('active');
+                    modalOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            modalOverlay.addEventListener('click', function() {
+                document.querySelectorAll('.modal-card').forEach(function(m) {
+                    m.classList.remove('active');
+                });
+                modal.classList.remove('active');
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Write Review button
+            var writeReviewBtn = document.getElementById('writeReviewBtn');
+            if (writeReviewBtn) {
+                writeReviewBtn.addEventListener('click', function() {
+                    document.getElementById('reviewsModal').classList.remove('active');
+                    document.getElementById('writeReviewModal').classList.add('active');
+                });
+            }
+
+            // Star rating functionality
+            var stars = document.querySelectorAll('#starRating .star');
+            var ratingInput = document.getElementById('reviewRating');
+            stars.forEach(function(star) {
+                star.addEventListener('click', function() {
+                    var rating = this.getAttribute('data-rating');
+                    ratingInput.value = rating;
+                    stars.forEach(function(s, index) {
+                        s.textContent = index < rating ? '★' : '☆';
+                        s.style.color = index < rating ? 'var(--red)' : '#ccc';
+                    });
+                });
+                star.addEventListener('mouseenter', function() {
+                    var rating = this.getAttribute('data-rating');
+                    stars.forEach(function(s, index) {
+                        s.style.color = index < rating ? 'var(--red)' : '#ccc';
+                    });
+                });
+            });
+            document.getElementById('starRating').addEventListener('mouseleave', function() {
+                var currentRating = ratingInput.value;
+                stars.forEach(function(s, index) {
+                    s.style.color = index < currentRating ? 'var(--red)' : '#ccc';
+                });
+            });
+
+            // Review form submission
+            var reviewForm = document.getElementById('reviewForm');
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (ratingInput.value === '0') {
+                        alert('Please select a rating');
+                        return;
+                    }
+                    reviewForm.style.display = 'none';
+                    document.getElementById('reviewThankYou').style.display = 'block';
+                });
+            }
+
+            // Reviews modal call button
+            var reviewsCallBtn = document.getElementById('reviewsCallBtn');
+            if (reviewsCallBtn) {
+                var reviewsRevealed = false;
+                reviewsCallBtn.addEventListener('click', function() {
+                    if (!reviewsRevealed) {
+                        reviewsRevealed = true;
+                        var p = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                        var num = '1' + p.join('');
+                        var display = '1-800-988-5561';
+                        this.innerHTML = display;
+                        this.onclick = function() { window.location.href = 'tel:' + num; };
+                    }
+                });
+            }
         });
 
         function toggleExpand(id) {
